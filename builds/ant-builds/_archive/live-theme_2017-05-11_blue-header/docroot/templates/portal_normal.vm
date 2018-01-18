@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+	
+	<title>$the_title - $company_name</title>
+	
+	<!-- For Chrome for Android: -->
+	<link rel="icon" sizes="192x192" href="$images_folder/touch-icon-192x192.png">
+	<!-- For iPhone 6 Plus with @3× display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="$images_folder/apple-touch-icon-180x180-precomposed.png">
+	<!-- For iPad with @2× display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="$images_folder/apple-touch-icon-152x152-precomposed.png">
+	<!-- For iPad with @2× display running iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="$images_folder/apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone with @2× display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="$images_folder/apple-touch-icon-120x120-precomposed.png">
+	<!-- For iPhone with @2× display running iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="$images_folder/apple-touch-icon-114x114-precomposed.png">
+	<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="$images_folder/apple-touch-icon-76x76-precomposed.png">
+	<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="$images_folder/apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices, 57×57px: -->
+	<link rel="apple-touch-icon-precomposed" href="$images_folder/apple-touch-icon-precomposed.png">
+	
+	 <!-- Google Analytics Core -->
+                #if ($request.getLocalName() == "MIHQWA53" || $request.getLocalName() == "MIHQWA54" || $request.getLocalName() == "MIHQWA53.us.dominos.com" || $request.getLocalName() == "MIHQWA54.us.dominos.com")
+                                <script>
+                                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                               
+                                  ga('create', 'UA-52002435-1', 'dominos.com');
+                                  ga('send', 'pageview');
+                                </script>
+                #else
+                                <script>
+                                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                               
+                                  ga('create', 'UA-52002435-4', 'dominos.com');
+                                  ga('send', 'pageview');
+                                </script>
+                #end
+
+</head>
+
+<body class="$css_class bodyBG">
+
+$theme.include($body_top_include)
+
+<div class="container-fluid" id="wrapper">
+
+	<header id="banner" role="banner">
+  
+    <a class="$logo_css_class" href="$home_url" title="#language_format ("go-to-x", [$site_name])">
+      <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+    </a>
+    
+    #dockbar()
+
+    #if ($is_signed_in)
+      <div id="role-landing-btns">
+        #set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService"))
+        #set($companyId = $themeDisplay.getCompanyId())
+        #set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees"))
+        #set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))
+
+        <ul>
+          <li><a href="/group/store"><span class="icon-home">&nbsp;</span>Store</a></li>
+          #if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$franchiseeView.getUserGroupId()) || $userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+            <li><a href="/group/franchisee"><span class="icon-home">&nbsp;</span>Franchisee</a></li>
+          #end
+          #if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+            <li><a href="/group/corporate"><span class="icon-home">&nbsp;</span>Corporate</a></li>
+          #end
+        </ul>
+
+      </div>
+
+      <!--#set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService"))
+      #set($companyId = $themeDisplay.getCompanyId())
+      #set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees"))
+      #set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))-->
+      
+      <div id="heading" class="site-heading">
+        <h1 class="site-title">
+          <a href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+            #if ($show_site_name)
+              <span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+                $site_name
+              </span>
+            #end
+          </a>
+        </h1>
+
+        <div class="search-custom" >
+          $theme.search()			
+        </div>
+
+        #if ($has_navigation || $is_signed_in)
+          #parse ("$full_templates_path/navigation.vm")
+        #end
+      </div>
+    #end
+	</header>
+
+	<div id="content">
+	
+		<h2 class="page-title">
+			<span>$the_title</span>
+		</h2>
+		
+		<nav id="breadcrumbs">#breadcrumbs()</nav>
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+    
+    #if ($is_signed_in)
+      <!-- Load JS -->
+      <script src="$javascript_folder/quick-links-modal.js"></script>
+      <script src="$javascript_folder/report-issue-modal.js"></script>
+      <script src="$javascript_folder/search-placeholder.js"></script>
+	#end
+		
+	#if ($is_signed_in)
+    <!-- Show Fixed Right-Side Buttons  -->
+		<div id="ql-feedback-toggle-btns">
+			<button id="ql-toggle-btn" class="ql-feedback-toggle-btns">QL<p>Quick Links</p></button>
+      		<button onclick="window.location.href='/group/guest/feedback'" id="feedback-toggle-btn" class="ql-feedback-toggle-btns"><span class="icon-bullhorn"></span><p>Feedback</p></button>
+			<button id="report-issue-btn" class="ql-feedback-toggle-btns"><span class="icon-bug"></span><p>Report Bug</p></button>
+		</div>
+	#end
+
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p class="copyright"><strong>NOTICE TO FRANCHISEES AND THEIR EMPLOYEES:</strong></p>
+		<p class="footer-txt">Franchisees may use or not use the materials provided on dLive at their discretion. As independent business owners, franchisees remain solely responsible for the operation of their stores including, without limitation, employment and pay practices, safety and security matters, and other workplace issues. The persons who work in stores owned and operated by a franchisee are employees of the franchisee, and not employees of Domino’s Pizza LLC or its affiliated entities. The materials are for general informational purposes only and do not, and are not intended to, constitute legal advice. By providing the materials, Domino’s Pizza LLC and its affiliated entities do not assume any responsibilities or duties of franchisees or any responsibility to update the materials for subsequent developments. Reliance on the materials is not a guarantee that accidents or losses will not occur or that franchisees will be in compliance with applicable legal requirements. Franchisees should consult their own legal counsel concerning their particular facts and circumstances and any specific legal questions they may have regarding the issues addressed in the materials.</p>
+		<p class="footer-txt">Certain materials provided on dLive contain information related to optional functions of the Domino’s PULSE system. As independent business owners, franchisees may use or not use these optional PULSE functions in their sole discretion. Franchisees must determine the policies, procedures, and settings to be implemented in their stores regarding the use of these optional Pulse functions and must ensure that the functions and their use are compliant with all applicable legal requirements.</p>
+		<p class="footer-txt">© Domino's Pizza LLC. All Rights Reserved.</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+
+
+#set($hostName = $request.getLocalName())
+<!-- Node: $!hostName -->
+
+</body>
+
+</html>

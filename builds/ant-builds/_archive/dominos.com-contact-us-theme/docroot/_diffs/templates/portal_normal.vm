@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div id="wrapper">
+	<!--<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>-->
+
+	<header id="banner" role="banner">
+  
+  <div id="genericHeader">
+  <div id="headerProfileContainer"><div class="headerProfile"> <div class="js-changeLoginState none"></div> <div class="js-changeLoginState"></div> </div> <div class="clr"><!-- --></div></div>
+
+    <div class="mainNavigation"> <span><a href="https://order.dominos.com/en/pages/order/">Order</a></span> <span><a href="https://order.dominos.com/en/pages/order/menu.jsp">Menu</a></span> <span><a href="https://order.dominos.com/en/pages/order/#/section/Coupons/category/All/">Coupons</a></span> <span><a href="https://order.dominos.com/en/pages/order/?locations=1#/locations/">Locations</a></span> <span><a href="https://order.dominos.com/en/pages/tracker/">Tracker</a></span> <!--<span id="spanish"><a href="http://espanol.dominos.com/enes/">Espa&#241;ol</a></span>-->
+      <div class="clr">
+        <!--  -->
+      </div>
+    </div>
+    <div class="subNavigation">
+      <div id="notch"><span>&nbsp;</span></div>
+      <a href="https://order.dominos.com/en" class="logo">Domino's Pizza</a>
+      <div id="js-subNavigationPage"></div>
+      <nav class="site-breadcrumbs" id="breadcrumbs">
+			<span class="siteHeader">#breadcrumbs()</span>
+      </nav>
+      <div class="clr">
+        <!--  -->
+      </div>
+    </div>
+  </div>
+	
+	</header>
+
+	<div id="content">
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

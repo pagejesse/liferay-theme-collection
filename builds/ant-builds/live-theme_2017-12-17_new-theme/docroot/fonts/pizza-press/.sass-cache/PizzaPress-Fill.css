@@ -1,0 +1,10 @@
+/* Webfont: PizzaPress-Fill */
+@font-face {
+  font-family: 'PizzaPressFill';
+  font-style: 'normal';
+  font-weight: 'normal';
+  src: url("PizzaPress-Fill.eot");
+  /* IE9 Compat Modes */
+  src: url("PizzaPress-Fill.eot?#iefix") format("embedded-opentype"), url("PizzaPress-Fill.woff") format("woff"), url("PizzaPress-Fill.svg#PizzaPress-Fill") format("svg"), url("PizzaPress-Fill.ttf") format("truetype");
+  /* Safari, Android, iOS */ }
+

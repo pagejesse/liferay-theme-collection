@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body class="$css_class">
+
+	<!-- The drawer is always open in large screens. The header is always shown, even in small screens. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+			<span class="mdl-layout-title"><a href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">$site_name</a></span>
+	      <div class="mdl-layout-spacer"></div>
+	      #dockbar()
+	    </div> <!-- //header-row w/site title and search -->
+	    
+        #if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	  </header>
+		
+	  <div class="mdl-layout__drawer">
+	  
+	  	<span class="mdl-layout-title">
+	  		<a class="$logo_css_class" href="$home_url" title="#language_format ("go-to-x", [$site_name])">
+				<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+			</a>
+	  	</span>
+	  	
+	  	
+	  	#if ($is_signed_in)
+	    	<div class="search-custom">
+				$theme.search()
+				<span>Search dLive</span>			
+			</div>
+	 	#end
+		
+		#if ($is_signed_in)
+			<div id="role-landing-btns" class="mdl-navigation">
+				<a href="/group/store" class="mdl-navigation__link"><span class="icon-home">&nbsp;</span>Store</a>
+				
+				#set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService"))
+				#set($companyId = $themeDisplay.getCompanyId())
+				#set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees"))
+				#set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))
+				
+				#if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$franchiseeView.getUserGroupId()) || $userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+					<a href="/group/franchisee" class="mdl-navigation__link"><span class="icon-home">&nbsp;</span>Franchisee</a>
+				#end
+				#if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+					<a href="/group/corporate" class="mdl-navigation__link"><span class="icon-home">&nbsp;</span>Corporate</a>
+				#end
+				
+			</div>
+		#end
+	  	
+	  	$theme.include($body_top_include)
+	  	
+	  	<!-- Quick Links and Feedback  -->
+		#if ($is_signed_in)
+		<script src="$javascript_folder/quick-links-modal.js"></script>
+		<nav id="ql-feedback-toggle-btns" class="mdl-navigation">
+	      <a id="ql-toggle-btn" class="mdl-navigation__link"><span class="icon-fullscreen"></span> Links</a>
+	      <a class="mdl-navigation__link" href="/group/guest/feedback"><span class="icon-bullhorn"></span> Feedback</a>
+	    </nav>
+		#end
+		
+	  </div>
+	  
+	  <main class="mdl-layout__content">
+	    <div class="page-content">
+            <div class="container-fluid" id="wrapper">
+
+                #if ($selectable)
+                    $theme.include($content_include)
+                #else
+                    $portletDisplay.recycle()
+
+                    $portletDisplay.setTitle($the_title)
+
+                    $theme.wrapPortlet("portlet.vm", $content_include)
+                #end
+            
+            </div><!-- //wrapper -->
+            
+        </div>
+        <nav id="breadcrumbs">#breadcrumbs()</nav>
+	  </main>
+	</div>
+	
+	<footer id="footer" role="contentinfo">
+		<p id="legal" class="copyright">
+			&copy; Domino's Pizza LLC. All Rights Reserved.
+		</p>
+	</footer>
+
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+<script src="$javascript_folder/material.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+$velocityPortletPreferences.setValue("displayStyle", "1")
+$velocityPortletPreferences.setValue("portletSetupShowBorders", "false")
+
+$theme.runtime("5_WAR_soportlet", "", $velocityPortletPreferences.toString())
+
+$velocityPortletPreferences.reset()

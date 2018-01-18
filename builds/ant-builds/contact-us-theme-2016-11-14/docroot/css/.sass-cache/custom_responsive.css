@@ -1,0 +1,234 @@
+/* ---------- Dockbar ---------- */
+@media (min-width: 980px) {
+  .aui #wrapper {
+    max-width: 880px; }
+  .aui #content {
+    border: 5px solid #0078ae;
+    border-top-width: 0;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px; }
+
+  /******** end aui ********/ }
+/******** end media ********/
+@media (max-width: 767px) {
+  .aui #content .row-fluid .span4 {
+    width: 100%; }
+  .aui .journal-content-article {
+    text-align: center; }
+
+  /******** end aui********/ }
+/******** end media********/
+@media (max-width: 979px) {
+  .aui * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  .aui body {
+    min-width: 395px;
+    padding-left: 0;
+    padding-right: 0; }
+  .aui #wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: .5em;
+    max-width: 100%; }
+  .aui #heading {
+    position: fixed;
+    height: 4.25em;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; }
+    .aui #heading .page-title {
+      background-image: none;
+      padding: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      border-radius: 0; }
+    .aui #heading .page-title__text {
+      display: none; }
+    .aui #heading .logo {
+      top: 2px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-size: cover;
+      transition: left .25s ease-out;
+      bottom: .3em; }
+      .aui #heading .logo img {
+        width: 44px;
+        height: 44px; }
+  .aui .is-handheld-nav-visible #navigation.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  .aui #navigation .nav {
+    margin: 0; }
+  .aui #navigation.open {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    margin-left: 0;
+    background-color: #0078ae;
+    z-index: 2;
+    -webkit-transform: translateX(-192em);
+    transform: translateX(-192em);
+    transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out; }
+    .aui #navigation.open .navbar-inner {
+      padding: 45px 12px; }
+      .aui #navigation.open .navbar-inner .nav-collapse {
+        height: auto;
+        overflow: visible; }
+        .aui #navigation.open .navbar-inner .nav-collapse .nav > li {
+          padding: .75em; }
+          .aui #navigation.open .navbar-inner .nav-collapse .nav > li > a {
+            color: #fff;
+            font-size: 1.5em;
+            border-left: solid 6px white; }
+          .aui #navigation.open .navbar-inner .nav-collapse .nav > li:last-child a:before {
+            display: none; }
+          .aui #navigation.open .navbar-inner .nav-collapse .nav > li:last-child a:after {
+            display: inline;
+            background-position: 0 0; }
+          .aui #navigation.open .navbar-inner .nav-collapse .nav > li.active > a, .aui #navigation.open .navbar-inner .nav-collapse .nav > li.open > a {
+            color: #0078ae;
+            opacity: .75;
+            background-color: white;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -o-border-radius: 2px;
+            border-radius: 2px; }
+          .aui #navigation.open .navbar-inner .nav-collapse .nav > li.active:last-child a:after, .aui #navigation.open .navbar-inner .nav-collapse .nav > li.open:last-child a:after {
+            background-position: 0 -32px; }
+  .aui .site-nav__untoggle-overlay {
+    position: fixed;
+    top: 0;
+    right: 9999px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color .75s ease-out;
+    cursor: pointer; }
+  .aui .is-handheld-nav-visible .site-nav__untoggle-overlay {
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.75); }
+  .aui #content {
+    border: none; }
+    .aui #content input[type="color"],
+    .aui #content input[type="date"],
+    .aui #content input[type="datetime"],
+    .aui #content input[type="datetime-local"],
+    .aui #content input[type="email"],
+    .aui #content input[type="month"],
+    .aui #content input[type="number"],
+    .aui #content input[type="password"],
+    .aui #content input[type="search"],
+    .aui #content input[type="tel"],
+    .aui #content input[type="text"],
+    .aui #content input[type="time"],
+    .aui #content input[type="url"],
+    .aui #content input[type="week"],
+    .aui #content select,
+    .aui #content textarea,
+    .aui #content .uneditable-input {
+      font-size: 12px; }
+  .aui .dockbar-split .dockbar, .aui .dockbar {
+    float: right;
+    height: auto;
+    position: relative;
+    z-index: 401; }
+    .aui .dockbar-split .dockbar .info-items, .aui .dockbar .info-items {
+      height: auto;
+      position: static;
+      width: 300px; }
+    .aui .dockbar-split .dockbar .navbar-inner, .aui .dockbar .navbar-inner {
+      width: auto; }
+      .aui .dockbar-split .dockbar .navbar-inner .btn-navbar, .aui .dockbar .navbar-inner .btn-navbar {
+        background: transparent;
+        border: none;
+        float: left;
+        font-size: 24px;
+        padding: 12px 15px; }
+        .aui .dockbar-split .dockbar .navbar-inner .btn-navbar:hover, .aui .dockbar .navbar-inner .btn-navbar:hover {
+          background-color: #5BBAE8; }
+        .aui .dockbar-split .dockbar .navbar-inner .btn-navbar.open, .aui .dockbar .navbar-inner .btn-navbar.open {
+          background-color: #F5AF45; }
+      .aui .dockbar-split .dockbar .navbar-inner .nav-account-controls, .aui .dockbar .navbar-inner .nav-account-controls {
+        padding: 0 5px; }
+        .aui .dockbar-split .dockbar .navbar-inner .nav-account-controls .user-avatar-image, .aui .dockbar .navbar-inner .nav-account-controls .user-avatar-image {
+          display: none; }
+      .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls, .aui .dockbar .navbar-inner .nav-add-controls {
+        background: transparent;
+        border-top-width: 0;
+        position: static;
+        z-index: 350;
+        padding: 0 5px; }
+        .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li, .aui .dockbar .navbar-inner .nav-add-controls > li {
+          float: left;
+          margin: 0;
+          position: relative; }
+          .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li.toggle-controls a, .aui .dockbar .navbar-inner .nav-add-controls > li.toggle-controls a {
+            clip: rect(auto auto auto auto);
+            position: static;
+            visibility: visible; }
+          .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li .page-preview-controls, .aui .dockbar .navbar-inner .nav-add-controls > li .page-preview-controls {
+            display: none; }
+          .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a, .aui .dockbar .navbar-inner .nav-add-controls > li > a {
+            background: transparent;
+            text-align: left;
+            white-space: nowrap; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a:hover, .aui .dockbar .navbar-inner .nav-add-controls > li > a:hover {
+              background: #F3f3f3; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a [class^="icon-"], .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a [class^="icon-"], .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a [class*=" icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a [class^="icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a [class^="icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a [class*=" icon-"] {
+              font-size: 22px;
+              margin-top: 0; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link, .aui .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link {
+              background: transparent; }
+              .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class^="icon-"], .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class^="icon-"], .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class*=" icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class^="icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class^="icon-"], .aui .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class*=" icon-"] {
+                color: #FFF; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a .nav-item-label, .aui .dockbar .navbar-inner .nav-add-controls > li > a .nav-item-label {
+              background: transparent;
+              display: inline;
+              left: 0;
+              margin-left: 0;
+              padding: 0;
+              position: relative; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a:hover .nav-item-label, .aui .dockbar .navbar-inner .nav-add-controls > li > a:hover .nav-item-label {
+              display: inline; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a .icon-caret-down, .aui .dockbar .navbar-inner .nav-add-controls > li > a .icon-caret-down {
+              display: none; }
+      .aui .dockbar-split .dockbar .navbar-inner .nav-collapse, .aui .dockbar .navbar-inner .nav-collapse {
+        z-index: 400; }
+        .aui .dockbar-split .dockbar .navbar-inner .nav-collapse.open, .aui .dockbar .navbar-inner .nav-collapse.open {
+          overflow: visible; }
+        .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav, .aui .dockbar .navbar-inner .nav-collapse > .nav {
+          background: #009AE5;
+          border-width: 0;
+          left: auto;
+          margin: 0;
+          min-width: 160px;
+          position: absolute;
+          right: 0;
+          z-index: 400; }
+          .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > a, .aui .dockbar .navbar-inner .nav-collapse > .nav > a {
+            color: #FFF;
+            font-size: 16px;
+            margin: 5px 0;
+            padding: 6px 15px; }
+            .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > a:focus, .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > a:hover, .aui .dockbar .navbar-inner .nav-collapse > .nav > a:focus, .aui .dockbar .navbar-inner .nav-collapse > .nav > a:hover {
+              background-color: #5BBAE8; }
+  .aui .portlet-dockbar {
+    display: inline-block;
+    width: 100%; }
+  .aui .signed-out #_145_navAddControlsNavbarBtn {
+    display: none; }
+
+  /******** end aui********/ }
+/******** end media********/
+

@@ -1,0 +1,30 @@
+@import "compass";
+@import "mixins";
+
+/* ---------- Dockbar ---------- */
+
+/**/@include respond-to(desktop) {
+	.aui {
+	
+	}
+}
+
+/**/@include respond-to(phone, tablet) {
+	.aui {
+		.portlet-dockbar {
+		    width: 200px;
+		}
+	}	
+}
+
+/**/@include respond-to(phone) {
+	.aui {
+	
+	}
+}
+
+@include respond-to(desktop, tablet) {
+	.aui {
+	
+	}
+}

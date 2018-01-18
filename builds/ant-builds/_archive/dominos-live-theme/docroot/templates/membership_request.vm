@@ -1,0 +1,55 @@
+#if (!$page_group.isUser())
+
+		#if ($is_signed_in)
+			<div class="memberButton" id="memberButton">
+				#set ($user_local_service = $serviceLocator.findService("com.liferay.portal.service.UserLocalService"))
+
+				#set ($member = $user_local_service.hasGroupUser($page_group.getGroupId(), $user_id))
+
+				#set ($membership_request_local_service = $serviceLocator.findService("com.liferay.portal.service.MembershipRequestLocalService"))
+
+				#set ($membership_request = $membership_request_local_service.hasMembershipRequest($user_id, $page_group.getGroupId(), 0))
+
+				#if (!$member)
+					#if ($page_group.getType() == 1)
+						#set ($join_url = $portletURLFactory.create($request, "174", $page.getPlid(), "ACTION_PHASE"))
+
+						$join_url.setWindowState("normal")
+						$join_url.setParameter("struts_action", "/sites_admin/edit_site_assignments")
+						$join_url.setParameter("cmd", "group_users")
+						$join_url.setParameter("redirect", $community_default_url)
+						$join_url.setParameter("groupId", "$page_group.getGroupId()")
+						$join_url.setParameter("addUserIds", "$user_id")
+
+						<span class="action request">
+							<a class="btn btn-primary btn-lg btn-block" href="$join_url">#language ("join-site")</a>
+						</span>
+						<br>
+					#elseif (($page_group.getType() == 2) && !$membership_request)
+						#set ($membership_request_url = $portletURLFactory.create($request, "174", $page.getPlid(), "ACTION_PHASE"))
+
+						$membership_request_url.setWindowState("normal")
+						$membership_request_url.setParameter("struts_action", "/sites_admin/post_membership_request")
+						$membership_request_url.setParameter("redirect", $community_default_url)
+						$membership_request_url.setParameter("groupId", "$page_group.getGroupId()")
+
+						#set ($arguments = [$user_name, $community_name])
+
+						$membership_request_url.setParameter("comments", $languageUtil.format($locale, "x-wishes-to-join-x", $arguments.toArray()))
+
+						<span class="action request">
+							<a class="btn btn-primary btn-lg btn-block" href="$membership_request_url">#language ("request-membership")</a>
+						</span>
+						<br>
+					#elseif ($membership_request)
+						<span class="action requested">
+							<a class="btn btn-primary btn-lg btn-block">#language ("membership-requested")</a>
+						</span>
+						<br>
+					#end
+				#end
+			</div>
+		#end
+
+#end
+	

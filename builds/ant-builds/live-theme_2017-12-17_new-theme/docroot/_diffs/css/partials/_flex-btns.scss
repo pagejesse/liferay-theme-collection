@@ -1,0 +1,72 @@
+/* ---------- FLEX BUTTONS ---------- */
+/* For role landing pages only */
+
+.flex-btns {
+  max-width: 960px;
+  margin: auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      text-align: center;
+      background: #e31837;
+      margin: 8px;
+      border-radius: 5px;
+
+      a {
+        align-self: center;
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: normal;
+        color: #ebebeb;
+        text-decoration: none;
+        display: block;
+        padding: 10px 35px;
+        transition-property: opacity;
+        transition-duration: 1s;
+        transition-delay: 0s;
+      }
+
+      &:focus,
+      &:hover {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .flex-btns {
+    ul {
+      li {
+        a {
+          font-size: 18px;
+          line-height: 20px;
+          padding: 20px 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .flex-btns {
+    ul {
+      li {
+        a {
+          font-size: 24px;
+          line-height: 26px;
+          padding: 30px 50px;
+        }
+      }
+    }
+  }
+}

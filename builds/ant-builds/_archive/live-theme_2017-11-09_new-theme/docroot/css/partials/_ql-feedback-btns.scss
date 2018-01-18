@@ -1,0 +1,56 @@
+/* ---------- QUICK LINKS AND FEEDBACK BUTTONS ---------- */
+
+#ql-feedback-toggle-btns {
+  padding-bottom: 1em;
+    
+  .btn-group {
+    width: 100%;
+    
+    .btn {
+      font-family: $pizzapress-font-family;
+      border-width: 2px;
+      font-size: 10px;
+      padding: 4px;
+      width: 33.33333333333%;
+    
+      [class^="icon-"] {
+        font-size: 18px;
+      }
+    }
+
+    .btn-primary {
+      background-color: $brand-color-2;
+      background-image: none;
+      border-color: $brand-color-2-light;
+      text-shadow: none;
+      
+      &:hover,
+      &:focus {
+        background-color: $brand-color-2-light;
+      }
+    }
+  }
+
+  /*Phone & Tablet*/
+  @include respond-to(phone, tablet) {
+    position: fixed;
+    opacity: .9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 16px;
+    background: $brand-color-2;
+    z-index: 300;
+    
+    .btn {
+      display: inline-block;
+      border-radius: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.modal-medium {
+  max-width: 500px;
+  margin-left: -250px;
+}

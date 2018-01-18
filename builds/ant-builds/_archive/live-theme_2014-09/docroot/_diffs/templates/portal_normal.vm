@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	$theme.include($top_head_include)
+	
+	<title>$the_title - $company_name</title>
+	
+	<!-- For Chrome for Android: -->
+	<link rel="icon" sizes="192x192" href="$images_folder/touch-icon-192x192.png">
+	<!-- For iPhone 6 Plus with @3× display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="$images_folder/apple-touch-icon-180x180-precomposed.png">
+	<!-- For iPad with @2× display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="$images_folder/apple-touch-icon-152x152-precomposed.png">
+	<!-- For iPad with @2× display running iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="$images_folder/apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone with @2× display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="$images_folder/apple-touch-icon-120x120-precomposed.png">
+	<!-- For iPhone with @2× display running iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="$images_folder/apple-touch-icon-114x114-precomposed.png">
+	<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="$images_folder/apple-touch-icon-76x76-precomposed.png">
+	<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="$images_folder/apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices, 57×57px: -->
+	<link rel="apple-touch-icon-precomposed" href="$images_folder/apple-touch-icon-precomposed.png">
+	
+	<!-- Google Analytics Core -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-52002435-1', 'dominos.com');
+	  ga('send', 'pageview');
+	</script>
+	
+</head>
+
+<body class="$css_class bodyBG">
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div id="heading">
+			<a class="$logo_css_class" href="$home_url" title="#language_format ("go-to-x", [$site_name])">
+				<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+			</a>
+			
+			<h1 class="site-title">
+				<a href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							$site_name
+						</span>
+					#end
+				</a>
+			</h1>
+			
+			#if ($is_signed_in)
+		    	<div class="search-custom" >
+					$theme.search()			
+				</div>
+		 	#end
+			
+		</div>
+		
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+		
+	</header>
+
+	<div id="content">
+	
+		<h2 class="page-title">
+			<span>$the_title</span>
+		</h2>
+		
+		<nav id="breadcrumbs">#breadcrumbs()</nav>
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+		
+		
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p id="legal" class="copyright">
+			&copy; Domino's Pizza LLC. All Rights Reserved.
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+<!-- Alloy Toggler for Feedback and Quick Links -->
+#if ($is_signed_in)
+	<div id="myToggler">
+		<div class="alloy-toggler-header toggler-header-collapsed">QL<p>Quick Links</p></div>
+	  	<div class="alloy-toggler-content toggler-content-collapsed">
+		  	#set ($VOID = $velocityPortletPreferences.setValue('portletSetupShowBorders', 'false'))
+			#set ($portlet_id = 'dominosquicklinks_WAR_dominosquicklinksportlet')
+			#set ($instance_id = "1234")
+			#set ($my_portlet_id = "${portlet_id}_INSTANCE_${instance_id}")
+			$theme.runtime($my_portlet_id, "", $velocityPortletPreferences.toString())
+			$velocityPortletPreferences.reset()
+	  	</div>
+	  
+	  	<div class="alloy-toggler-header toggler-header-collapsed"><span class="icon-bullhorn">&nbsp;</span><p>feedback</p></div>
+	  	<div class="alloy-toggler-content toggler-content-collapsed">
+		  	#set ($VOID = $velocityPortletPreferences.setValue('portletSetupShowBorders', 'false'))
+			#set ($portlet_id = '56')
+			#set ($instance_id = "2345")
+			#set ($my_portlet_id = "${portlet_id}_INSTANCE_${instance_id}")
+			$theme.runtime($my_portlet_id, "", $velocityPortletPreferences.toString())
+			$velocityPortletPreferences.reset()
+	  	</div>
+	</div>
+#end
+
+<script src="$javascript_folder/alloy_slide-out_toggler.js"></script>
+
+ #set($hostName = $request.getLocalName())
+<!-- Node: $!hostName -->
+
+</body>
+
+</html>

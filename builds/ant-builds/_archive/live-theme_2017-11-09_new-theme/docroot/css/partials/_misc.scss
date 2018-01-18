@@ -1,0 +1,41 @@
+/* ---------- MISC ---------- */
+
+.aui {
+  .separator {
+    border-color: #BFBFBF transparent #FFF;
+    border-style: solid;
+    border-width: 1px 0;
+  }
+  
+  #sign-in {
+    background: url(@theme_image_path@/common/key.png) no-repeat 3px 50%;
+    font-weight: bold;
+    padding: 5px 5px 5px 25px;
+    position: absolute;
+    right: 0;
+    top: -1.2em;
+  }
+  
+  .redirected-to-message {
+    margin-right: 10px;
+    
+    a {
+      background: #ECFBFF;
+      border: 1px solid #ADE5FA;
+      color: #8D8D8D;
+      padding: 5px;
+    }
+  }
+  
+  .taglib-portal-message {
+    margin-bottom: 0;
+  }
+  
+  .lfr-panel-container {
+    background-color: transparent;
+  }
+  
+  #hrefFm {
+    margin: 0;
+  }
+}

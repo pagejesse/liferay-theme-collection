@@ -1,0 +1,90 @@
+#if($pznUtil)
+	$pznUtil.filterNavigationItems($user, $nav_items)
+#end
+##set ($url = $themeDisplay.getURLCurrent())
+<div class="navbar" id="top-nav" role="navigation">	
+  <!-- Brand and toggle get grouped for better mobile display -->
+
+	<div class="navbar-inner">
+	
+		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			Site Pages
+		</a>
+
+		<a href="#menu" class="side-menu-link btn btn-navbar" title="Click for sub-menu">
+        		My Pages
+	       </a>
+
+	<a class="brand" href="$community_default_private_url"><img alt="$logo_description" src="$site_logo" /></a>
+
+
+	<div class="nav-collapse collapse">
+	    <ul class="nav">
+
+			#foreach ($nav_item in $nav_items)
+
+				#if ($nav_item.isSelected())
+					<li class="selected">
+				#elseif ($nav_item.hasChildren() && $nav_item.isSelected())
+					<li class="selected dropdown">
+				#elseif ($nav_item.hasChildren())
+					<li class="dropdown">
+				#else
+					<li>
+				#end
+					#if ($nav_item.hasChildren())
+						<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="$nav_item.getURL()" $nav_item.getTarget()>
+					#elseif ($nav_item.getName().contains("Dashboard") || $nav_item.getName().contains("dashboard"))
+						<a href="$user_dashboard_url">
+					#else 
+						<a href="$nav_item.getURL()" $nav_item.getTarget()>
+					#end
+
+					#if ($nav_item.getName().contains("Dashboard") || $nav_item.getName().contains("dashboard"))
+						<span class="dash">
+					#else
+						<span>
+					#end
+
+					$nav_item.icon() $nav_item.getName() </span>
+
+						#if ($nav_item.hasChildren())
+							<b class="caret"></b>
+						#end
+					</a>
+
+					#if ($nav_item.hasChildren())
+						<ul class="dropdown-menu">
+							#foreach ($nav_child in $nav_item.getChildren())
+								#if ($nav_child.isSelected())
+									<li class="selected">
+								#else
+									<li>
+								#end
+									<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+								</li>
+							#end						
+						</ul>
+					#end
+				</li>
+			#end
+	  	</ul>
+
+	  	<ul class="nav pull-right">
+	  		#if(!$is_signed_in)
+
+				<li>
+					<a class="sign-in" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+				</li>
+			#else
+				<li class="hideForMonitor"><a href="$control_panel_url">$control_panel_text</a></li>
+				<li class="hideForMonitor"><a href="$my_account_url">$my_account_text</a></li>
+
+			#end
+  		</ul>	
+	  	
+  	  </div><!-- /.navcollapse -->
+  </div><!-- /.navbar-inner -->
+</div>

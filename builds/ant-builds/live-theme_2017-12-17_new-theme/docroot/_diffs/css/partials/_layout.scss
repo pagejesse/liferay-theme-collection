@@ -1,0 +1,20 @@
+/* ---------- LAYOUT ---------- */
+
+#wrapper {
+  position: relative;
+  padding: 0px;
+  
+  .main-content,
+  .site-heading {
+    display: block;
+    max-width: 1366px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: white;
+    
+    /*Responsiveness*/
+    @include respond-to(desktop) {
+      width: 92%;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/* ---------- ROLE BUTTONS ---------- */
+
+.role-btns {
+  float: right;
+  margin-right: 15px;
+  font-size: 11px;
+  
+  ul {
+    li {
+      list-style-type: none;
+      float: left;
+      margin-left: 15px;
+      
+      a {
+        text-decoration: none;
+        font-family: "PizzaPress", arial, sans-serif;
+        
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+        
+        .badge {
+          margin-right: 5px;
+          padding: 4px 2px 4px 4px;
+          background-color: #e31837;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+/* ---------- SITE NAVIGATION ---------- */
+
+.aui {
+  #site-nav {
+    padding: 1.8em 0;
+    z-index: 301;
+    
+    @include respond-to(desktop, tablet) {
+      margin-left: 1.5%;
+    }
+    
+    @include respond-to(phone) {
+      z-index: 303;
+    }
+    
+    #navigation {
+      .navbar-inner {
+        background: white;
+        border: none;
+        padding-left: 3px;
+        padding-right: 3px;
+        @include box-shadow(none);
+        
+        .nav {
+          margin-right: 0;
+          float: none;
+          
+          li {
+            float: none;
+            line-height: 18px;
+            padding: 8px 0;
+            
+            >a {
+              font-family: $oswald-font-family;
+              font-size: 14px;
+              font-weight: 400;
+              color: $brand-color-3;
+              padding: 2px 4px;
+              border-bottom: solid #ccc 3px;
+              @include box-shadow(none);
+              @include text-shadow(none);
+              
+              .icon-caret-down {
+                padding: 0;
+                margin: 0;
+              }
+            }
+            
+            &.open {
+              >a {
+                color: $brand-color-1;
+                border-color: $brand-color-1;
+              }
+            }
+            
+            &.active {
+              >a {
+                background-color: white;
+                color: $brand-color-2;
+                border-bottom-color: $brand-color-2;
+                @include box-shadow(none);
+              }
+            }
+            
+            .dropdown-menu {
+              background: $brand-bg-color-2;
+              border-width: 1px;
+              position: relative;
+              float: none;
+              margin: 6px 0 12px 0;
+              @include border-radius(0);
+              
+              a {
+                color: $brand-color-4;
+                border-bottom: solid 2px $brand-color-6;
+                
+                &:hover {
+                  background: none;
+                  background-image: none;
+                  color: black;
+                  border-bottom-color: $brand-color-1-light;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      /*Responsive #navigation*/
+      @include respond-to(phone, tablet) {
+        display: block;
+      }
+      
+      @include respond-to(phone) {
+        .navbar-inner {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 2em 1em;
+          position: fixed;
+          top: 44px;
+          left: 0;
+          bottom: 0;
+          z-index: 300;
+          overflow-y: scroll;
+          -webkit-transform: translateY(100%);
+          -ms-transform: translateY(100%);
+          transform: translateY(100%);
+          transition: -webkit-transform .25s ease-out;
+          transition: transform .25s ease-out;
+          transition: transform .25s ease-out, -webkit-transform .25s ease-out;
+          opacity: .95;
+          text-align: center;
+        }
+        
+        &.open {
+          .navbar-inner {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            
+            .nav-collapse {
+              height: auto;
+              overflow: visible;
+              max-width: 16em;
+              margin: auto;
+              
+              .nav li>a {
+                font-size: 18px;
+                padding: 10px 4px;
+              }
+            }
+          }
+        }
+        
+        .nav {
+          margin: 0;
+        }
+      }
+    }
+    
+    .modify-pages {
+      .add-page-editor-input {
+        width: 75%;
+      }
+      
+      .delete-tab {
+        display: none;
+      }
+      
+      .lfr-nav-item .lfr-nav-child-toggle {
+        padding: 10px;
+        
+        i {
+          margin: 0;
+        }
+        
+        /*Responsiveness*/
+        @include respond-to(phone, tablet) {
+          line-height: 1em;
+          padding: 14px;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+      
+      .drag-handle {
+        background-color: rgba(255, 255, 255, 0.75);
+        color: $brand-color-1-light;
+      }
+      
+      /*Responsive .modify-pages*/
+      @include respond-to(phone, tablet) {
+        .lfr-nav-sortable {
+          >a {
+            >span {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

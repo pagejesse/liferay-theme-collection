@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div id="wrapper">
+	<!--<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>-->
+
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+				</a>
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language("go-to") $site_name">
+						$site_name
+					</span>
+				#end
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		#if (!$is_signed_in)
+			<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+
+	<div id="content">
+		<!--<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>-->
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		
+		<div id="genericFooter">
+	<div id="footerLinks">
+		<ul class="navigation dominosColor1">
+			<li><a href="http://www.dominosbiz.com/Biz-Public-EN/Site+Content/index.html" target="_blank">Corporate</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/content/nutritional/nutrition.jsp">Nutrition</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/giftcard/">Gift Cards</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/customer/opt-in.jsp">Email <abbr title="and">&amp;</abbr> Text Offers</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/content/content.jsp?page=terms">Legal</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/content/content.jsp?page=privacy">Privacy</a></li>
+			<li class="divider">/</li>
+			<li><a href="http://www.dominosbiz.com/Biz-Public-EN/Site+Content/Secondary/Careers/" target="_blank">Careers</a></li>
+			<li class="divider">/</li>
+			<li><a href="https://order.dominos.com/en/pages/content/customer-service/faq.jsp">Customer Service</a></li>
+			<li class="divider">/</li>
+			<li><a href="http://dominosbiz.com/Biz-Public-EN/Biz+Footer/Business+Orders/" target="_blank">Large Business Orders</a></li>
+			<li class="divider">/</li>
+			<li><a href="http://www.dominos.com/about-pizza/">About Pizza</a></li>
+		</ul>
+	</div>
+	<div class="column1">
+		<div class="legalStuff">
+			<span class="tag dominosColor1">Legal Stuff:</span>
+			<div>
+				<p><span class="bold">Any Delivery Charge is not a tip paid to your 
+driver. Please reward your driver for awesomeness. Our drivers carry 
+less than $20.</span> You must ask for this limited time offer. Minimum 
+purchase required for delivery. Delivery charge and tax may apply. 
+Prices, participation, delivery area and charges may vary, including AK 
+and HI. Returned checks, along with the state's maximum allowable 
+returned check fee, may be electronically presented to your bank. &copy;2013 
+Dominos IP Holder LLC. Dominos&reg;, Domino's Pizza&reg; and the modular logo 
+are trademarks of Domino's IP Holder LLC. "Coca-Cola" and the Contour 
+Bottle design are registered trademarks of The Coca-Cola Company. The 
+Ice Breakers&reg; Mints trademark and trade dress are used under license.</p>
+				<p>Domino's pizza made with a Gluten Free Crust is prepared in a 
+common kitchen with the risk of gluten exposure. Therefore, Domino's 
+DOES NOT recommend this pizza for customers with celiac disease. 
+Customers with gluten sensitivities should exercise judgment in 
+consuming this pizza.</p>
+				<p>Our Guarantee: If you are not completely satisfied with your Domino's <a class="noVisibleLink" href="http://pizza.dominos.com/" target="_blank">Pizza</a> experience, we will make it right or refund your money.</p>
+			</div>
+		</div>
+	</div>
+	<div class="column2">
+		<div class="socialLinks">
+			<div class="facebookButton"><div fb-xfbml-state="rendered" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-href="http://www.facebook.com/Dominos" data-send="false" data-layout="button_count" data-show-faces="false"><span style="height: 20px; width: 80px;"><iframe src="/dominos.com-contact-us-theme/images/custom/like.htm" class="fb_ltr" title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 20px; width: 80px;" name="f38be517403199a" id="f1ec641e58cf43a" scrolling="no"></iframe></span></div></div>
+            <div class="twitterButton"><iframe data-twttr-rendered="true" title="Twitter Follow Button" style="width: 65px; height: 20px;" class="twitter-follow-button twitter-follow-button" src="/dominos.com-contact-us-theme/images/custom/follow_button.htm" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+            <div class="googleButton"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="/dominos.com-contact-us-theme/images/custom/fastbutton.htm" name="I0_1367250818599" id="I0_1367250818599" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></div>
+            <div class="clr"><!--  --></div>
+		</div>
+		<div id="promoLink">
+			<img alt="Open For Lunch" src="/dominos.com-contact-us-theme/images/custom/footerOpenLunch.gif">
+		</div>
+	</div>
+	<div class="clr"><!--  --></div>
+</div>
+
+
+
+		
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

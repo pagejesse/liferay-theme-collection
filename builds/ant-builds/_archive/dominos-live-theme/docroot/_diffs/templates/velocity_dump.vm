@@ -1,0 +1,146 @@
+<ul>
+	<li>$theme_display</li>
+	<li>$portlet_display</li>
+	<li>$theme_timestamp</li>
+	<li>$theme_settings</li>
+	<li>$css_class</li>
+	<li>$layout</li>
+	<li>$page_group</li>
+	<li>$liferay_toggle_controls</li>
+	<li>$liferay_dockbar_pinned</li>
+	<li>$css_folder</li>
+	<li>$images_folder</li>
+	<li>$javascript_folder</li>
+	<li>$templates_folder</li>
+	<li>$full_css_path</li>
+	<li>$full_templates_path</li>
+	<li>$css_main_file</li>
+	<li>$js_main_file</li>
+	<hr>
+	<li>$company_id</li>
+	<hr>
+	<li>$company_name</li>
+	<li>$company_logo</li>
+	<li>$company_logo_height</li>
+	<li>$company_logo_width</li>
+	<hr>
+	<li>$company_url</li>
+	<hr>
+</ul>
+<ul>
+	<li>$user_id</li>
+	<li>$is_default_user</li>
+	<li>$user_first_name</li>
+	<li>$user_middle_name</li>
+	<li>$user_last_name</li>
+	<li>$user_name</li>
+	<li>$is_male</li>
+	<li>$is_female</li>
+	<li>$user_birthday</li>
+	<li>$user_email_address</li>
+	<li>$language_id</li>
+	<li>$w3c_language_id</li>
+	<li>$time_zone</li>
+	<li>$user_greeting</li>
+	<li>$user_comments</li>
+	<li>$user_login_ip</li>
+	<li>$user_last_login_ip</li>
+	<li>$is_signed_in</li>
+	<hr>
+	<li>$group_id</li>
+	<hr>
+</ul>
+<ul>
+	<li>$show_add_content</li>
+	<li>$add_content_text</li>
+	<li>$add_content_url</li>
+	<li>$layout_text</li>
+	<li>$layout_url</li>
+	<li>$show_control_panel</li>
+	<li>$control_panel_text</li>
+	<li>$control_panel_url</li>
+	<li>$show_home</li>
+	<li>$home_text</li>
+	<li>$home_url</li>
+	<li>$show_my_account</li>
+	<li>$my_account_text</li>
+	<li>$my_account_url</li>
+	<li>$show_page_settings</li>
+	<li>$page_settings_text</li>
+	<li>$page_settings_url</li>
+	<li>$show_sign_in</li>
+	<li>$sign_in_text</li>
+	<li>$sign_in_url</li>
+	<li>$show_sign_out</li>
+	<li>$sign_out_text</li>
+	<li>$sign_out_url</li>
+	<li>$show_toggle_controls</li>
+	<li>$toggle_controls_text</li>
+	<li>$toggle_controls_url</li>
+	<li>$update_available_url</li>
+</ul>
+<ul>
+	<li>$the_title</li>
+	<li>$selectable</li>
+	<li>$is_maximized</li>
+	<li>$is_freeform</li>
+</ul>
+<ul>
+	<li>$page_javascript_1</li>
+	<li>$page_javascript_2</li>
+	<li>$page_javascript_3</li>
+	<li>$layout</li>
+	<li>$is_first_child</li>
+	<li>$is_first_parent</li>
+	<li>$the_title</li>
+	<li>$is_portlet_page</li>
+</ul>
+<ul>
+	<li>$all_portlets</li>
+	<li>$column_1_portlets</li>
+	<li>$column_2_portlets</li>
+	<li>$column_3_portlets</li>
+	<li>$column_4_portlets</li>
+	<li>$column_5_portlets</li>
+	<li>$maximized_portlet_id</li>
+	<li>$typeSettingsProperties</li>
+	<li>$page_javascript_1</li>
+	<li>$page_javascript_2</li>
+	<li>$page_javascript_3</li>
+	<li>$community_name</li>
+	<li>$css_class</li>
+	<li>$my_places_portlet_url</li>
+	<hr>
+	<li>$community_default_public_url</li>
+	<li>$community_default_private_url</li>
+	<li>$community_default_url</li>
+	<hr>
+	<li>$the_title</li>
+	<li>$layouts</li>
+	<li>$pages</li>
+</ul>
+<ul>
+	<li>$nav_items</li>
+	<li>$has_navigation</li>
+</ul>
+<ul>
+	<li>$show_staging</li>
+	<li>$staging_text</li>
+</ul>
+<ul>
+	<li>$show_my_places</li>
+	<li>$my_places_text</li>
+</ul>
+<ul>
+	<li>$dir_include</li>
+	<li>$bottom_include</li>
+	<li>$bottom_ext_include</li>
+	<li>$content_include</li>
+	<li>$top_head_include</li>
+	<li>$top_messages_include</li>
+</ul>
+<ul>
+	<li>$date</li>
+	<li>$current_time</li>
+	<li>$the_year</li>
+</ul>

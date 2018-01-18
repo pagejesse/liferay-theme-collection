@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+	
+	 <!-- START DOMINOSBIZ.COM SPECIFIC -->
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="$images_folder/favicon.ico" type="image/x-icon">
+    
+    <!-- START OF Google Analytics tracking Code -->
+	<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-1172593-3");
+    pageTracker._setDomainName("none");
+    pageTracker._setAllowLinker(true);
+    pageTracker._trackPageview();
+    </script>
+    
+    <!-- END DOMINOSBIZ.COM SPECIFIC -->
+</head>
+
+<body class="$css_class customBG">
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div class="container-fluid" id="wrapper">
+
+	<!-- START DOMINOSBIZ.COM SPECIFIC -->
+	
+		<div id="insidehead_stripe">
+
+        <div id="insidehead_logo">
+        	<a href="/web/guest/home"><img alt="Back to www.dominosbiz.com home" border="0" height="100" src="$images_folder/insidehead_logo_tile.gif" width="100"/></a>
+       	</div>
+        
+        
+        <!--nav container -->
+        <div id="insidenav_container">
+        
+         <script> var counter=0;</script>
+        
+        <a href='/web/about-dominos-pizza/' onMouseOver="sec1.src= '$images_folder/about_on.gif';" onMouseOut="sec1.src = '$images_folder/about_off.gif';"><img src= "$images_folder/about_off.gif" name="sec1" border=0></a>
+        <a href='/web/careers-at-dominos-pizza/' onMouseOver="sec2.src= '$images_folder/careers_on.gif';" onMouseOut="sec2.src = '$images_folder/careers_off.gif';"><img src= "$images_folder/careers_off.gif" name="sec2" border=0></a>
+        <a href='/web/franchise-with-dominos-pizza/' onMouseOver="sec3.src= '$images_folder/franchise_on.gif';" onMouseOut="sec3.src = '$images_folder/franchise_off.gif';" ><img src= "$images_folder/franchise_off.gif" name="sec3" border=0></a>
+        <a href='/web/dominos-around-the-world/' onMouseOver="sec4.src= '$images_folder/international_on.gif';" onMouseOut="sec4.src = '$images_folder/international_off.gif';" ><img src= "$images_folder/international_off.gif" name="sec4" border=0></a>
+        <a href='http://phx.corporate-ir.net/phoenix.zhtml?c=135383&p=irol-irhome' onMouseOver="sec5.src= '$images_folder/investors_on.gif';" onMouseOut="sec5.src = '$images_folder/investors_off.gif';" ><img src="$images_folder/investors_off.gif" name="sec5" border=0 style="border-right:none;"></a>
+      
+      	
+        </div> 
+        <!--end nav container -->
+        
+        </div>
+        <!-- end insidehead_stripe -->
+        
+        <!-- END DOMINOSBIZ.COM SPECIFIC -->
+	
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+						$site_name
+					</span>
+				#end
+			</h1>
+			
+			<!--start nav-->
+			<div id="sectionnav_stripe">
+				<div id="sectionnav_container">
+					#if ($has_navigation || $is_signed_in)
+					#parse ("$full_templates_path/navigation.vm")
+					#end
+				</div>
+			</div>
+			<!--/nav-->
+			
+		</div>
+		<!--/heading-->
+
+		#if (!$is_signed_in)
+			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+		
+	</header>
+
+	<div id="content">
+
+		$theme.include($content_include)
+		
+	</div>
+
+	
+	<!--begin footer -->
+	<footer id="footer" role="contentinfo">
+    <script> var counter=0;</script>
+    
+	<script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="http://order.dominos.com/en/pages/order/">www.dominos.com - Order Online</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="http://order.dominos.com/en/pages/order/?locations=1#/locations/">Locations</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/business-orders">Business Orders</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/school-lunch-program">School Lunch</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/americas-dairy-farmers">America's Dairy Farmers</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/dominos-suppliers">Suppliers</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="https://order.dominos.com/en/pages/content/content.jsp?page=terms">Terms of Use</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="https://order.dominos.com/en/pages/content/customer-service/faq.jsp">Contact Us</a>
+    
+    <!--begin legal --> 
+    <div id="legal">Online ordering at participating stores. &copy;2013 Domino's IP Holder LLC. Domino's&reg;, Domino's Pizza&reg; and the modular logo are registered trademarks of Domino's IP Holder LLC. "Coca-Cola", "Coca-Cola Zero", "Diet Coke", "Sprite" the Contour Bottle design, the Dynamic Ribbon are registered trademarks of The Coca-Cola Company.</div>
+    <!--end legal -->
+	</footer>
+	<!--end footer -->
+	
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

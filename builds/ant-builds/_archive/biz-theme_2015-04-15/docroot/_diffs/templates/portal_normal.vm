@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	$theme.include($top_head_include)
+	
+	<title>$the_title - $company_name</title>
+	
+	<link href="$images_folder/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="$images_folder/favicon.png" rel="apple-touch-icon" />
+	<link href="$images_folder/favicon72.png" rel="apple-touch-icon" sizes="72x72" />
+	<link href="$images_folder/favicon114.png" rel="apple-touch-icon" sizes="114x114" />
+	<link href="$images_folder/favicon144.png" rel="apple-touch-icon" sizes="144x144" />
+    	
+    <!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-52002435-2', 'dominos.com');
+		ga('send', 'pageview');
+	</script>
+    <!-- /Google Analytics -->
+	
+</head>
+
+<body class="$css_class customBG">
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+	<div id="insidehead_stripe">
+		<div id="insidehead_logo">
+        	<a href="$home_url"><img alt="Back to www.dominosbiz.com home" border="0" height="100" src="$images_folder/insidehead_logo_tile.gif" width="100"/></a>
+       	</div>
+       	<!-- /insidehead_logo -->
+       	
+       	<!--language selection-->
+		<div id="insidehead_language">
+ 			$theme.language("fm", null, "languageId", 1)
+       	</div>
+       	<!--/language selection-->
+
+		<div id="insidenav_container">
+        	<a href='/web/about-dominos-pizza/' onMouseOver="sec1.src= '$images_folder/about_on.gif';" onMouseOut="sec1.src = '$images_folder/about_off.gif';"><img src= "$images_folder/about_off.gif" name="sec1" border=0></a><a href='https://jobs.dominos.com' onMouseOver="sec2.src= '$images_folder/jobs_on.gif';" onMouseOut="sec2.src = '$images_folder/jobs_off.gif';"><img src= "$images_folder/jobs_off.gif" name="sec2" border=0></a><a href='/web/franchise-with-dominos-pizza/' onMouseOver="sec3.src= '$images_folder/franchise_on.gif';" onMouseOut="sec3.src = '$images_folder/franchise_off.gif';" ><img src= "$images_folder/franchise_off.gif" name="sec3" border=0></a><a href='/web/dominos-around-the-world/' onMouseOver="sec4.src= '$images_folder/international_on.gif';" onMouseOut="sec4.src = '$images_folder/international_off.gif';" ><img src= "$images_folder/international_off.gif" name="sec4" border=0></a><a href='http://phx.corporate-ir.net/phoenix.zhtml?c=135383&p=irol-irhome' onMouseOver="sec5.src= '$images_folder/investors_on.gif';" onMouseOut="sec5.src = '$images_folder/investors_off.gif';" ><img src="$images_folder/investors_off.gif" name="sec5" border=0></a>
+        </div> 
+        <!-- /insidenav_container -->
+        
+	</div>
+	<!-- /insidehead_stripe -->
+	
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+						$the_title
+					</span>
+				#end
+			</h1>
+			
+			<div id="sectionnav_stripe">
+				<div id="sectionnav_container">
+					#if ($has_navigation || $is_signed_in)
+						#parse ("$full_templates_path/navigation.vm")
+					#end
+				</div>
+				<!-- /sectionnav_container -->
+			</div>
+			<!-- /sectionnav_stripe -->
+			
+		</div>
+		<!--/heading-->
+		
+	</header>
+	<!-- /banner -->
+
+	<div id="content">
+		$theme.include($content_include)
+	</div>
+	<!-- /content -->
+	
+	<footer id="footer" role="contentinfo">
+    	<a href="http://order.dominos.com/en/pages/order/">www.dominos.com - Order Online</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://order.dominos.com/en/pages/order/?locations=1#/locations/">Locations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/web/business-orders">Business Orders</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/web/school-lunch-program">School Lunch</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/web/americas-dairy-farmers">America's Dairy Farmers</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/web/dominos-suppliers">Suppliers</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://order.dominos.com/en/pages/content/content.jsp?page=terms">Terms of Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://order.dominos.com/en/pages/content/customer-service/faq.jsp">Contact Us</a>
+    
+    	<div id="legal">
+    		Online ordering at participating stores. &copy;2015 Domino's IP Holder LLC. Domino's&reg;, Domino's Pizza&reg; and the modular logo are registered trademarks of Domino's IP Holder LLC. "Coca-Cola", "Coca-Cola Zero", "Diet Coke", "Sprite" the Contour Bottle design, the Dynamic Ribbon are registered trademarks of The Coca-Cola Company.
+    	</div>
+    	<!-- /legal -->
+	</footer>
+	<!-- /footer -->
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+ #set($hostName = $request.getLocalName())
+<!-- Node: $!hostName -->
+
+</body>
+
+</html>

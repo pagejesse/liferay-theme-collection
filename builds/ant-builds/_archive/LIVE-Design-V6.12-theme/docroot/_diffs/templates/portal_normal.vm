@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>$the_title - $company_name</title>
+	
+	<!--add to home screen icons for iOS and Android-->
+    <link rel="apple-touch-icon" sizes="57x57" href="$images_folder/mobile/live-touch-icon_57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="$images_folder/mobile/live-touch-icon_72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="$images_folder/mobile/live-touch-icon_114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="$images_folder/mobile/live-touch-icon_144x144.png" />
+	
+	$theme.include($top_head_include)
+	
+	<script type="text/javascript" charset="utf-8">
+		AUI().use('aui-viewport')
+	</script>
+</head>
+
+<body class="$css_class customBG">
+
+$theme.include($body_top_include)
+
+<div id="wrapper">
+	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
+
+	<header id="banner" role="banner">
+
+		#if ($is_signed_in)
+			#dockbar()
+		#end
+
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+				</a>
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language("go-to") $site_name">
+						$site_name
+					</span>
+				#end
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		#if (!$is_signed_in)
+			<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+		#if ($is_signed_in)
+		     <div class="search">
+		          $theme.search()
+		      </div>
+		 #end
+	</header>
+
+	<div id="content">
+		<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p class="powered-by">
+			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

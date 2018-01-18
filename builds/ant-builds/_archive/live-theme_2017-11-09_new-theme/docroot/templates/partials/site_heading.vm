@@ -1,0 +1,15 @@
+<div id="heading" class="site-heading">
+  <h1 class="site-title">
+    <a href="$site_default_url" title="#language_format (" go-to-x ", [$site_name])">
+          #if ($show_site_name)
+            <div class="site-name" title="#language_format ("go-to-x", [$site_name])">
+              $site_name
+            </div>
+          #end
+        </a>
+  </h1>
+
+  <div class="search-custom">
+    $theme.search()
+  </div>
+</div>

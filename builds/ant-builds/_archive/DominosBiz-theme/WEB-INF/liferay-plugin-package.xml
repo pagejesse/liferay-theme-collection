@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package 6.1.0//EN" "http://www.liferay.com/dtd/liferay-plugin-package_6_1_0.dtd">
+
+<plugin-package>
+	<name><![CDATA[DominosBiz]]> Theme</name>
+	<module-id>liferay/DominosBiz-theme/6.2.10.1/war</module-id>
+	<recommended-deployment-context>DominosBiz-theme</recommended-deployment-context>
+	<required-deployment-contexts></required-deployment-contexts>
+	<types>
+		<type>theme</type>
+	</types>
+	<tags></tags>
+	<short-description><![CDATA[]]></short-description>
+	<long-description><![CDATA[]]></long-description>
+	<change-log><![CDATA[]]></change-log>
+	<page-url>http://www.liferay.com</page-url>
+	<author><![CDATA[Liferay, Inc.]]></author>
+	<licenses>
+		<license osi-approved="true">EE</license>
+	</licenses>
+	<liferay-versions>
+		<liferay-version>6.2.10+</liferay-version>
+	</liferay-versions>
+</plugin-package>

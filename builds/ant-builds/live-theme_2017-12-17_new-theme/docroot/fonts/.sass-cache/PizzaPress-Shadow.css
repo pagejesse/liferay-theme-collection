@@ -1,0 +1,10 @@
+/* Webfont: PizzaPress-Shadow */
+@font-face {
+  font-family: 'PizzaPressShadow';
+  font-style: 'normal';
+  font-weight: 'normal';
+  src: url("PizzaPress-Shadow.eot");
+  /* IE9 Compat Modes */
+  src: url("PizzaPress-Shadow.eot?#iefix") format("embedded-opentype"), url("PizzaPress-Shadow.woff") format("woff"), url("PizzaPress-Shadow.svg#PizzaPress-Shadow") format("svg"), url("PizzaPress-Shadow.ttf") format("truetype");
+  /* Safari, Android, iOS */ }
+

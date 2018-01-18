@@ -1,0 +1,8 @@
+#*
+This file allows you to override and define new Velocity variables.
+*#
+#if ($is_signed_in)
+  #set ($site_default_url = "/group/11205/home")
+#else
+  #set ($site_default_url = "/web/guest")
+#end

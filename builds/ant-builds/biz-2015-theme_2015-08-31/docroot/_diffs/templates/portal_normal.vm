@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>$the_title - $company_name</title>
+	
+	<!--DPZ Icons-->
+	<link href="$images_folder/_dpz_custom/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="$images_folder/_dpz_custom/favicon.png" rel="apple-touch-icon" />
+	<link href="$images_folder/_dpz_custom/favicon72.png" rel="apple-touch-icon" sizes="72x72" />
+	<link href="$images_folder/_dpz_custom/favicon114.png" rel="apple-touch-icon" sizes="114x114" />
+	<link href="$images_folder/_dpz_custom/favicon144.png" rel="apple-touch-icon" sizes="144x144" />
+	<!--/DPZ Icons-->
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+	
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-52002435-2', 'dominos.com');
+		ga('send', 'pageview');
+	</script>
+    <!-- /Google Analytics -->
+    
+</head>
+
+<body class="$css_class customBodyBg">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+
+	<!--language selection-->
+		<div id="languageSelection">
+ 			$theme.language("fm", null, "languageId", 1)
+       	</div>
+	<!--/language selection-->
+
+	<header id="banner" role="banner">
+		<div id="heading">
+			<a class="$logo_css_class" href="$home_url">
+				<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+			</a>
+		</div>
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+		
+		<div class="page-title">
+			<h2>$the_title</h2>
+		</div>
+	</header>
+	
+	<nav id="breadcrumbs">#breadcrumbs()</nav>
+
+	<div id="content">
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+	
+	<!--footer-->
+	<footer id="footer" class="row-fluid">
+		#set ($VOID = $velocityPortletPreferences.setValue('groupId', $themeDisplay.getScopeGroupId().toString()))
+		#set ($VOID = $velocityPortletPreferences.setValue('articleId', '15669'))
+		#set ($VOID = $velocityPortletPreferences.setValue('portletSetupShowBorders', 'false'))
+		#set ($portlet_id = '56')
+		#set ($my_portlet_id = "${portlet_id}_INSTANCE_1234")
+		$theme.runtime($my_portlet_id, "", $velocityPortletPreferences.toString())
+		#set ($VOID = $velocityPortletPreferences.reset())
+	</footer>
+	<!-- /footer -->
+</div><!--/wrapper-->
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

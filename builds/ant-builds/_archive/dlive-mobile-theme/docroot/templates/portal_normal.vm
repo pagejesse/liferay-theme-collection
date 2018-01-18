@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+$theme.include($body_top_include)
+
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div class="$logo_css_class"">
+			<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+		</div>
+				
+		#if ($is_signed_in)
+			#dockbar()
+		#end
+
+		#if (!$is_signed_in)
+			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+	</header>
+	
+	<div id="mobileTabs" class="mobileTabsParent">
+		<ul class="nav nav-tabs">
+	        <li class="active myNewsFeed"><a href="#myNewsFeed">My News</a></li>
+	        <li class="dpzSocial"><a href="#dpzSocial">Social</a></li>
+	  	</ul>
+	    
+	    <div class="tab-content">
+	        <div id="myNewsFeed" class="tabContentContainer">
+	          	#if ($selectable)
+				$theme.include($content_include)
+				#else
+					$portletDisplay.recycle()
+		
+					$portletDisplay.setTitle($the_title)
+		
+					$theme.wrapPortlet("portlet.vm", $content_include)
+				#end
+	        </div>
+	    
+	        <div id="dpzSocial" class="tabContentContainer">
+				
+	        </div>
+	    </div>
+	</div>
+	
+	<script type="text/javascript">
+	AUI().use('aui-tabview',
+	  function(Y) {
+	    new Y.TabView(
+	      {
+	        srcNode: '#mobileTabs'
+	      }
+	    ).render();
+	  }
+	);
+	</script>
+
+	<footer id="footer" role="contentinfo">
+		<p class="powered-by">
+			Looking for more? Visit <a href="https://dlive.dominos.com">dlive.dominos.com</a>.
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+<script type="text/javascript">
+	AUI().use('aui-tabview',
+	  function(Y) {
+	    new Y.TabView(
+	      {
+	        srcNode: '#mobileTabs'
+	      }
+	    ).render();
+	  }
+	);
+</script>
+
+</body>
+
+</html>

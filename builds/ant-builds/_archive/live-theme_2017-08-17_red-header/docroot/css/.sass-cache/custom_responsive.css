@@ -1,0 +1,83 @@
+/* ---------- Dockbar ---------- */
+/**/
+@media (min-width: 980px) {
+  .aui .search-custom {
+    float: right;
+    padding-left: 5px;
+    background-color: #e31837; }
+  .aui #navigation .navbar-inner li a {
+    font-size: 18px;
+    padding: 4px 12px 4px; } }
+/**/
+@media (min-width: 768px) and (max-width: 979px) {
+  .aui #navigation {
+    display: block; }
+  .aui #_145_navSiteNavigationNavbarBtn {
+    display: none; } }
+/**/
+@media (max-width: 767px) {
+  .aui #content {
+    margin: 0 2.2em; }
+  .aui #ql-feedback-toggle-btns {
+    right: -2.2em;
+    width: 28px; }
+    .aui #ql-feedback-toggle-btns .ql-feedback-toggle-btns {
+      font-size: 18px;
+      padding: 5px 3px; }
+      .aui #ql-feedback-toggle-btns .ql-feedback-toggle-btns > p {
+        display: none; }
+  .aui #banner {
+    padding: 0 2.2em; }
+    .aui #banner #navigation {
+      display: none; }
+      .aui #banner #navigation.open {
+        display: block;
+        text-align: center; }
+        .aui #banner #navigation.open .navbar-inner .nav-collapse {
+          height: auto;
+          overflow: visible; } }
+@media (min-width: 768px) {
+  .aui #content {
+    margin: 0 5em; }
+  .aui #ql-feedback-toggle-btns {
+    right: -5em;
+    width: 56px; }
+    .aui #ql-feedback-toggle-btns .ql-feedback-toggle-btns {
+      font-size: 25px;
+      padding: 5px; }
+  .aui #banner {
+    padding: 0 5em; }
+    .aui #banner #heading .site-name {
+      font-size: 38.5ps; }
+  .aui #role-landing-btns {
+    line-height: 45px; }
+  .aui .search-custom {
+    line-height: 45px; } }
+@media (max-width: 979px) {
+  .aui .modify-pages .lfr-nav-sortable > a > span {
+    padding-left: 0; }
+  .aui #heading {
+    text-align: center; }
+    .aui #heading .site-title {
+      line-height: inherit; }
+      .aui #heading .site-title .site-name {
+        font-size: 28px;
+        line-height: 30px; }
+  .aui #role-landing-btns {
+    line-height: 28px;
+    width: 100%;
+    padding: 0 0 5px 0; }
+  .aui .search-custom {
+    float: none;
+    line-height: 45px;
+    text-align: center;
+    background: white;
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15); }
+    .aui .search-custom input[type="text"] {
+      width: 80%; }
+  .aui #navigation .navbar-inner li a {
+    font-size: 16px;
+    padding: 4px 10px 4px; } }
+

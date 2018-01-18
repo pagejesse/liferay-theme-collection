@@ -1,0 +1,29 @@
+#foreach ($nav_item in $current_nav_items)
+    #if($current_group.getGroupId() == $scopeGroupId && $nav_item.getLayoutId() == $layout.getLayoutId())
+        <li class="selected">
+    #else
+        <li>
+    #end
+        <a href="/web$current_group.getFriendlyURL()$nav_item.getFriendlyURL()">
+            <span>$nav_item.getName()</span>
+        </a>
+
+        #if ($nav_item.hasChildren())
+            <ul class="child-menu">
+            #foreach ($nav_child in $nav_item.getChildren())
+                #if($current_group.getGroupId() == $scopeGroupId && $nav_child.getLayoutId() == $layout.getLayoutId())
+                    <li class="selected">
+                #else
+                    <li>
+                #end
+                <a href="/web$current_group.getFriendlyURL()$nav_child.getFriendlyURL()">
+                    $nav_child.getName()
+                </a>
+                </li>
+                <li class="divider"></li>
+            #end
+        </ul>
+        #end
+    </li>
+#end
+

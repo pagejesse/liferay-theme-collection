@@ -1,0 +1,56 @@
+/* ---------- STAGING ---------- */
+
+.aui {
+  .navbar-inner .nav.staging-bar {
+    border-top-width: 0;
+    position: static;
+    
+    li {
+      .page-variations {
+        display: inline-block;
+        margin-left: 8px;
+        
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    
+    li.dropdown {
+      position: static;
+    }
+  }
+  
+  .portlet-staging-bar {
+    .row-fluid .layout-revision-info {
+      .layout-revision-version {
+        label {
+          color: #B6DDF5;
+        }
+      }
+    }
+    
+    .label-submit {
+      background-color: #469DE3;
+    }
+    
+    .layout-branch-selector,
+    .layout-set-branch-selector {
+      .icon-caret-down {
+        background-color: #469DE3;
+      }
+    }
+    
+    .page-variations-options,
+    .site-pages-variation-options {
+      .lfr-icon-menu {
+        background-color: #50AFE9;
+        
+        .icon-globe,
+        .icon-file {
+          background-color: #469DE3;
+        }
+      }
+    }
+  }
+}

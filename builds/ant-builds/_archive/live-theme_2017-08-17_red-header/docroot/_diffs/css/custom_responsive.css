@@ -1,0 +1,170 @@
+@import "compass";
+@import "mixins";
+
+/* ---------- Dockbar ---------- */
+
+/**/@include respond-to(desktop) {
+	.aui {
+		.search-custom {
+			float: right;
+		 	padding-left: 5px;
+		  	background-color: #e31837;
+		}
+			
+		#navigation {
+			.navbar-inner {
+				li a {
+					font-size: 18px;
+					padding: 4px 12px 4px;
+				}
+			}
+		}
+	}
+}
+
+/**/@include respond-to(tablet) {
+	.aui {
+		#navigation {
+		 	display: block;
+		}
+		
+		#_145_navSiteNavigationNavbarBtn {
+			display: none;
+		}
+	}	
+}
+
+/**/@include respond-to(phone) {
+	.aui {
+		
+		#content{
+			margin: 0 2.2em;
+		}
+		
+		#ql-feedback-toggle-btns {
+			right: -2.2em;
+		  	width: 28px;
+		  	
+			.ql-feedback-toggle-btns {
+				font-size: 18px;
+				padding: 5px 3px;
+				
+				> p {
+					display: none;
+				}
+			}
+		}
+		
+		#banner {
+			padding: 0 2.2em;
+		
+			#navigation {
+				display: none;
+	
+				&.open {
+					display: block;
+					text-align: center;
+	
+					.navbar-inner {
+	
+						.nav-collapse {
+							height: auto;
+							overflow: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include respond-to(desktop, tablet) {
+	.aui {
+	
+		#content{
+			margin: 0 5em;
+		}
+		
+		#ql-feedback-toggle-btns {
+		  	right: -5em;
+		  	width: 56px;
+		  	
+			.ql-feedback-toggle-btns {
+				font-size: 25px;
+				padding: 5px;
+			}
+		}
+		
+		#banner {
+			padding: 0 5em;
+			
+			#heading {
+				.site-name {
+					font-size: 38.5ps;
+				}
+			}
+		}
+		
+		#role-landing-btns {
+		  line-height: 45px;
+		}
+		
+		.search-custom  {
+			line-height: 45px;
+		}
+	}
+}
+
+@include respond-to(phone, tablet) {
+	.aui {
+		.modify-pages {
+			.lfr-nav-sortable {
+				> a {
+					> span {
+	  					padding-left: 0;
+					}
+				}
+			}
+		}
+		
+		#heading {
+			text-align: center;
+			
+			.site-title {
+				line-height: inherit;
+			  
+			  	.site-name {
+					font-size: 28px;
+					line-height: 30px;
+				}
+			}
+		}
+		
+		#role-landing-btns {
+		  line-height: 28px;
+		  width: 100%;
+		  padding: 0 0 5px 0;
+		}
+	
+		.search-custom  {
+			float: none;
+			line-height: 45px;
+			text-align: center;
+			background: white;
+			@include box-shadow(0 2px 10px 0 rgba(0,0,0,0.15));
+			
+			input[type="text"] {
+				width: 80%;
+			}
+			
+		}
+		
+		#navigation {
+		
+			.navbar-inner li a {
+			  font-size: 16px;
+			  padding: 4px 10px 4px;
+			}
+		}
+	}
+}

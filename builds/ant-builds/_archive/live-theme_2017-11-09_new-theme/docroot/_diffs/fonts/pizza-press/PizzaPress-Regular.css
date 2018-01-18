@@ -1,0 +1,76 @@
+/* Webfont: PizzaPress-Regular */@font-face {
+    font-family: 'PizzaPress';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Regular.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Regular.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Regular.svg#PizzaPress-Regular') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Antique */@font-face {
+    font-family: 'PizzaPressAntique';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Antique.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Antique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Antique.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Antique.svg#PizzaPress-Antique') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Antique.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Fill */@font-face {
+    font-family: 'PizzaPressFill';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Fill.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Fill.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Fill.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Fill.svg#PizzaPress-Fill') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Fill.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Inline */@font-face {
+    font-family: 'PizzaPressInline';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Inline.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Inline.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Inline.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Inline.svg#PizzaPress-Inline') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Inline.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Ornaments */@font-face {
+    font-family: 'PizzaPressOrnaments';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Ornaments.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Ornaments.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Ornaments.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Ornaments.svg#PizzaPress-Ornaments') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Ornaments.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Outline */@font-face {
+    font-family: 'PizzaPressOutline';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Outline.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Outline.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Outline.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Outline.svg#PizzaPress-Outline') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Outline.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* Webfont: PizzaPress-Shadow */@font-face {
+    font-family: 'PizzaPressShadow';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Shadow.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Shadow.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Shadow.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Shadow.svg#PizzaPress-Shadow') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Shadow.ttf') format('truetype'); /* Safari, Android, iOS */
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html>
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+    
+    <!-- START DOMINOSBIZ.COM SPECIFIC -->
+    
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="$images_folder/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="$images_folder/favicon.ico" type="image/x-icon">
+    
+    <!-- START OF Google Analytics tracking Code -->
+	<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-1172593-3");
+    pageTracker._setDomainName("none");
+    pageTracker._setAllowLinker(true);
+    pageTracker._trackPageview();
+    </script>
+    
+    <!-- END DOMINOSBIZ.COM SPECIFIC -->
+    
+</head>
+
+<body class="$css_class customBG">
+
+$theme.include($body_top_include)
+
+<div id="wrapper">
+	<!--<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>-->
+
+  <header id="banner" role="banner">
+		<!--<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+				</a>
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language("go-to") $site_name">
+						$site_name
+					</span>
+				#end
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>-->
+        
+        #if ($is_signed_in)
+			#dockbar()
+		#end
+        
+        #if (!$is_signed_in)
+			<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+
+		<!--#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+        #end-->
+            
+         <!-- START DOMINOSBIZ.COM SPECIFIC -->
+         
+        
+
+<!-- CI -->
+<!-- PB -->
+<!-- C --><!-- begin header -->
+
+    <div id="homehead_stripe">
+        
+    	<div id="homehead_logo">
+        	<a href="/web/guest/home"><img alt="Back to www.dominosbiz.com home" border="0" height="128" src="$images_folder/homehead_logo_tile.gif" width="128"/></a>
+        </div>
+        
+        <!--begin language selection-->
+        <div id="insidehead_language">
+        <a mporgnav href="http://espanol.dominos.com/enes/" onclick="return switchLanguage();
+        function switchLanguage() {
+        urls=new Array();
+        oh=new Array();tsd=new Array();ohs=new Array();tsds=new Array();ohr=new Array();tsdr=new Array();
+        tsh='espanol.dominos.com';
+        ohs[0]=/www([0-9]{2})\.order\.dominos\.com/i;ohr[0]='www$1.order.dominos.com';
+        tsds[0]=/\/enes\/sdwww([0-9]{2})\/sdorder\/ddominos\//i;tsdr[0]='/enes/sdwww$1/sdorder/ddominos/';
+        oh[0]='order.dominos.com';tsd[0]='/enes/sdorder/ddominos/';
+        oh[1]='sdc.dominos.com';tsd[1]='/enes/sdsdc/ddominos/'; 
+        oh[2]='info.dominos.com';tsd[2]='/enes/sdinfo/ddominos/';
+        oh[3]='public.dominos.com';tsd[3]='/enes/sdpublic/ddominos/';
+        oh[4]='www.dominosbiz.com';tsd[4]='/enes/ddominosbiz/';
+        oh[5]='dominos.com';tsd[5]='/enes/';
+        urls[0]=new URLData(tsh,oh,tsd,ohs,tsds,ohr,tsdr);
+        oh=new Array();tsd=new Array();ohs=null;tsds=null;ohr=null;tsdr=null;
+        tsh='espanol-test.dominos.in.tellme.com';
+        oh[0]='www-test.dominos.in.tellme.com';tsd[0]='/enes/sdwww-test/sddominos/sdin/dtellme/';
+        oh[1]='order01.olo.pizza.hosting.sv2.tellme.com';tsd[1]='/enes/sdorder01/sdolo/sdpizza/sdhosting/sdsv2/dtellme/';
+        oh[2]='order02.olo.pizza.hosting.sv2.tellme.com';tsd[2]='/enes/sdorder02/sdolo/sdpizza/sdhosting/sdsv2/dtellme/';
+        oh[3]='biz-test.dominos.in.tellme.com';tsd[3]='/enes/sdbiz-test/sddominos/sdin/dtellme/';
+        oh[4]='test.dominos.com';tsd[4]='/enes/sdtest/ddominos/';
+        urls[1]=new URLData(tsh,oh,tsd,ohs,tsds,ohr,tsdr);
+        var found=false;
+        for (i=0;i<urls.length;i++){ 
+        idx=location.href.indexOf(urls[i].tsh);
+        rxmatch=false;
+        if(idx==-1){
+        if (urls[i].ohs != null) {
+        for (j=0;j<urls[i].ohs.length;j++){
+        match = location.href.match(urls[i].ohs[j])
+        if (match!=null) {
+        idx=location.href.indexOf(match[0]);
+        rxmatch=true;
+        break;
+        }
+        }
+        }
+        if (rxmatch) {
+        idx=idx+match[0].length;hname=urls[i].tsh+match[0].replace(urls[i].ohs[j],urls[i].tsdr[j]);
+        found=true;
+        } else {
+        for (j=0;j<urls[i].oh.length;j++){ 
+        idx=location.href.indexOf(urls[i].oh[j]);
+        if(idx>-1) {
+        idx=idx+urls[i].oh[j].length;hname=urls[i].tsh+urls[i].tsd[j];
+        found=true;
+        break;
+        }
+        }
+        }
+        }else{
+        if (urls[i].tsds != null) {
+        for (j=0;j<urls[i].tsds.length;j++){
+        match = location.href.match(urls[i].tsds[j])
+        if (match!=null) {
+        idx=location.href.indexOf(match[0]);
+        rxmatch=true;
+        break;
+        }
+        }
+        }
+        if (rxmatch) {
+        idx=idx+match[0].length;hname=match[0].replace(urls[i].tsds[j],urls[i].ohr[j]);
+        found=true;
+        } else {
+        for (j=0;j<urls[i].tsd.length;j++){ 
+        idx=location.href.indexOf(urls[i].tsd[j]);
+        if(idx>-1) {
+        idx=idx+urls[i].tsd[j].length;hname=urls[i].oh[j];
+        found=true;
+        break;
+        }
+        }
+        }
+        }
+        if (found) break;
+        }
+        path=location.href.substring(idx);
+        hend=hname.charAt(hname.length-1);pstart=path.charAt(0);
+        if(hend=='/' && pstart=='/')path=path.substring(path.indexOf('/')+1);
+        if(hend!='/' && pstart!='/')path='/'+path;
+        location.href=location.protocol+'//'+hname+path;
+        return false;
+        }
+        function URLData(tsh, oh, tsd, ohs, tsds, ohr, tsdr) {
+        this.tsh = tsh;
+        this.oh = oh;
+        this.tsd = tsd;
+        this.ohs = ohs;
+        this.tsds = tsds;
+        this.ohr = ohr;
+        this.tsdr = tsdr;
+        }
+        ">ESPA&Ntilde;OL</a>
+        </div>
+        <!--end language selection -->
+    
+        <!--nav container -->
+        <div id="homenav_container">
+        <a href='/web/guest/about' onMouseOver="sec1.src='$images_folder/about_home_on.gif';" onMouseOut="sec1.src ='$images_folder/about_home_off.gif';"><img alt="About Domino's" border="0" HEIGHT="74" name="sec1" src="$images_folder/about_home_off.gif" WIDTH="160"/></a>
+        
+        <a href='/web/guest/careers' onMouseOver="sec2.src='$images_folder/careers_home_on.gif';" onMouseOut="sec2.src ='$images_folder/careers_home_off.gif';"><img alt="Careers at Domino's Pizza" border="0" HEIGHT="74" name="sec2" src="$images_folder/careers_home_off.gif" WIDTH="160"/></a>
+        
+        <a href='/web/guest/franchise' onMouseOver="sec3.src='$images_folder/fran_home_on.gif';" onMouseOut="sec3.src ='$images_folder/fran_home_off.gif';"><img alt="Franchise with Domino's Pizza" border="0" HEIGHT="74" name="sec3" src="$images_folder/fran_home_off.gif" WIDTH="160"/></a>
+        
+        <a href='/web/guest/international' onMouseOver="sec5.src='$images_folder/international_home_on.gif';" onMouseOut="sec5.src ='$images_folder/international_home_off.gif';"><img alt="Domino's Around the Globe" border="0" HEIGHT="74" name="sec5" src="$images_folder/international_home_off.gif" WIDTH="160"/></a>
+        
+        <a href='http://phx.corporate-ir.net/phoenix.zhtml?c=135383&p=irol-irhome' onMouseOver="sec4.src='$images_folder/investors_home_on.gif';" onMouseOut="sec4.src ='$images_folder/investors_home_off.gif';"><img alt="Invest with Domino's Pizza" border="0" HEIGHT="74" name="sec4" src="$images_folder/investors_home_off.gif" WIDTH="160"/></a>
+        
+        </div> 
+        <!--end nav container -->
+    
+    </div> <!-- end homehead_stripe -->
+        
+        <!-- END DOMINOSBIZ.COM SPECIFIC -->
+		
+	</header>
+
+	<div id="content">
+		<!--<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>-->
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<!--begin footer -->
+    <div id="footer">
+    <script> var counter=0;</script>
+
+	<script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="http://order.dominos.com/en/pages/order/">www.dominos.com - Order Online</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="http://order.dominos.com/en/pages/order/?locations=1#/locations/">Locations</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/guest/business-orders">Business Orders</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/guest/school-lunch">School Lunch</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/guest/americas-dairy-farmers">America's Dairy Farmers</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="/web/guest/suppliers">Suppliers</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="https://order.dominos.com/en/pages/content/content.jsp?page=terms">Terms of Use</a><script>if (counter!=0) document.write('&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp'); counter++;</script>
+    <a href="https://order.dominos.com/en/pages/content/customer-service/faq.jsp">Contact Us</a>
+    </div>
+    <!--end footer -->
+    
+    <!--begin legal --> 
+    <div id="legal">Online ordering at participating stores. &copy;2013 Domino's IP Holder LLC. Domino's&reg;, Domino's Pizza&reg; and the modular logo are registered trademarks of Domino's IP Holder LLC. "Coca-Cola", "Coca-Cola Zero", "Diet Coke", "Sprite" the Contour Bottle design, the Dynamic Ribbon are registered trademarks of The Coca-Cola Company.</div>
+    <!--end legal -->
+
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

@@ -1,0 +1,22 @@
+#set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService"))
+#set($companyId = $themeDisplay.getCompanyId())
+#set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees"))
+#set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))
+
+<a class="$logo_css_class" href="$home_url" title="#language_format (" go-to-x ", [$site_name])">
+  <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+</a>
+
+#if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+  <a class="$logo_css_class" href="/group/corporate" alt="Corporate Home">
+    <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+  </a>
+#elseif ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$franchiseeView.getUserGroupId()))
+  <a class="$logo_css_class" href="/group/franchisee" alt="Franchisee Home">
+    <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+  </a>
+#else
+  <a class="$logo_css_class" href="/group/store" alt="Store Home">
+    <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+  </a>
+#end

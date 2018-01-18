@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<button class="toggle-button">☰</button>
+
+<div id="menu" class="slideMenu">
+	<a class="$logo_css_class" href="$home_url" title="#language_format ("go-to-x", [$site_name])">
+		<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+	</a>
+	
+	#if ($is_signed_in)
+		<div id="role-landing-btns">
+			<a href="/group/store"><span class="icon-home">&nbsp;</span>Store</a>
+			<div id="roleBtns">
+				<ul>
+					<li><a href="#" alt="">Discussion</a></li>
+					<li><a href="#" alt="">Training</a></li>
+					<li><a href="#" alt="">Pizza Theater</a></li>
+					<li><a href="#" alt="">Operations</a></li>
+					<li><a href="#" alt="">PWR</a></li>
+					<li><a href="#" alt="">ATS</a></li>
+					<li><a href="#" alt="">Standards</a></li>
+					<li><a href="#" alt="">Rewards</a></li>
+					<li><a href="#" alt="">St. Jude</a></li>
+					<li><a href="#" alt="">Partners</a></li>
+				</ul>
+			</div>
+			
+			#set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService"))
+			#set($companyId = $themeDisplay.getCompanyId())
+			#set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees"))
+			#set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))
+			
+			#if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$franchiseeView.getUserGroupId()) || $userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+				<a href="/group/franchisee"><span class="icon-home">&nbsp;</span>Franchisee</a>
+				<div id="roleBtns">
+					<ul>
+						<li><a href="#" alt="">ATS</a></li>
+						<li><a href="#" alt="">Staffing</a></li>
+						<li><a href="#" alt="">Training</a></li>
+						<li><a href="#" alt="">The Rush</a></li>
+						<li><a href="#" alt="">Mktg Update</a></li>
+						<li><a href="#" alt="">ATS</a></li>
+						<li><a href="#" alt="">Operations</a></li>
+						<li><a href="#" alt="">E&S</a></li>
+					</ul>
+				</div>
+			#end
+			#if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+				<a href="/group/corporate"><span class="icon-home">&nbsp;</span>Corporate</a>
+				<div id="roleBtns">
+					<ul>
+						<li><a href="#" alt="">Org Charts</a></li>
+						<li><a href="#" alt="">Development</a></li>
+						<li><a href="#" alt="">The Rush</a></li>
+						<li><a href="#" alt="">Discussion</a></li>
+						<li><a href="#" alt="">St. Jude</a></li>
+						<li><a href="#" alt="">Marketing</a></li>
+					</ul>
+				</div>
+			#end
+		</div>
+	#end
+  	
+  	$theme.include($body_top_include)
+  	
+  	<!-- Quick Links and Feedback  -->
+	#if ($is_signed_in)
+		<script src="$javascript_folder/quick-links-modal.js"></script>
+		<ul>
+			<li><a id="ql-toggle-btn"><span class="icon-fullscreen"></span> Links</a></li>
+      		<li><a id="ql-toggle-btn"><a href="/group/guest/feedback"><span class="icon-bullhorn"></span> Feedback</a></li>
+	    </ul>
+	#end
+</div>
+
+<div class="container-fluid" id="panel">
+	
+	#dockbar()
+	
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							$site_name
+						</span>
+					#end
+				</a>
+
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+
+	<div id="content">
+		<nav id="breadcrumbs">#breadcrumbs()</nav>
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+</div>
+
+<footer id="footer" role="contentinfo">
+	<p class="powered-by">
+		&copy; Domino's</a>
+	</p>
+</footer>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+<script src="$javascript_folder/slideout.min.js"></script>
+<script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+  
+  // Toggle button
+  document.querySelector('.toggle-button').addEventListener('click', function() {
+    slideout.toggle();
+  });
+</script>
+
+</body>
+
+</html>

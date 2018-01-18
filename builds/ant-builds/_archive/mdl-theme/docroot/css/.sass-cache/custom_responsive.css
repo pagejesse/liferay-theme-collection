@@ -1,0 +1,8 @@
+/* ---------- Dockbar ---------- */
+/**/
+/**/
+@media (max-width: 979px) {
+  .aui .portlet-dockbar {
+    width: 200px; } }
+/**/
+

@@ -1,0 +1,49 @@
+/* ---------- BASE ---------- */
+
+.aui {
+  background: transparent;
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .bodyBG {
+    background-color: $main-bg-color;
+  }
+  a {
+    color: $brand-color-1;
+    font-weight: initial;
+  }
+  a:hover,
+  a:focus {
+    color: $brand-color-1-light;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $oswald-font-family;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  h5 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  h5 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
