@@ -1,0 +1,11 @@
+/* Webfont: PizzaPress-Inline */@font-face {
+    font-family: 'PizzaPressInline';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Inline.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Inline.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Inline.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Inline.svg#PizzaPress-Inline') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Inline.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+

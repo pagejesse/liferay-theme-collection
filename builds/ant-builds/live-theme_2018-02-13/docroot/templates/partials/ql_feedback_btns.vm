@@ -1,0 +1,9 @@
+<div id="ql-feedback-toggle-btns">
+  <div class="btn-group">
+    <button id="ql-toggle-btn" type="button" class="btn btn-primary"><span class="icon-link"></span><br>Links</button>
+
+    <button id="feedback-toggle-btn" type="button" class="btn btn-primary" onclick="window.location.href='/group/guest/feedback'"><span class="icon-bullhorn"></span><br>Feedback</button>
+
+    <button id="report-issue-btn" type="button" class="btn btn-primary"><span class="icon-bug"></span><br>Report</button>
+  </div>
+</div>

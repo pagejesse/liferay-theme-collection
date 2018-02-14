@@ -1,0 +1,12 @@
+<div id="role-btns" class="role-btns">
+  #set($userGroupService = $serviceLocator.findService("com.liferay.portal.service.UserGroupLocalService")) #set($companyId = $themeDisplay.getCompanyId()) #set($franchiseeView = $userGroupService.fetchUserGroup($companyId, "app_portal_domestic_frans_and_designees")) #set($corporateView = $userGroupService.fetchUserGroup($companyId, "liferay_portal_users_us"))
+
+  <ul>
+    <li><a href="/group/store"><span class="icon-home badge">&nbsp;</span>Store</a></li>
+    #if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$franchiseeView.getUserGroupId()) || $userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+    <li><a href="/group/franchisee"><span class="icon-home badge">&nbsp;</span>Franchisee</a></li>
+    #end #if ($userGroupService.hasUserUserGroup($themeDisplay.getUserId(),$corporateView.getUserGroupId()))
+    <li><a href="/group/corporate"><span class="icon-home badge">&nbsp;</span>Corporate</a></li>
+    #end
+  </ul>
+</div>

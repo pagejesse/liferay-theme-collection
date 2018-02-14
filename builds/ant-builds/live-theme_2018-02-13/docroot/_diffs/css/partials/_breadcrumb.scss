@@ -1,0 +1,41 @@
+/* ---------- BREADCRUMB ---------- */
+
+.aui {
+  #breadcrumbs {
+    background-color: #ddd;
+
+		.breadcrumb {
+      padding: 0 22px;
+			margin-bottom: 0;
+      background-color: transparent;
+      font-size: 11px;
+		}
+	}
+  
+  /*Fixed On Scroll*/
+	.lfr-hudcrumbs {
+		position: fixed;
+		bottom: 0;
+		z-index: 302;
+
+		.breadcrumb {
+      background: rgba(227, 24, 55, 0.9);
+      margin-bottom: 0;
+      padding-bottom: 15px;
+      @include border-top-left-radius(0);
+			@include border-top-right-radius(0);
+
+			li {
+				a, span {
+					color: #FFF;
+          @include text-shadow(-1px -1px #000);
+				}
+			}
+		}
+    
+    /*Phone & Tablet*/
+    @include respond-to(phone, tablet) {
+      display: none;
+    }
+	}
+}

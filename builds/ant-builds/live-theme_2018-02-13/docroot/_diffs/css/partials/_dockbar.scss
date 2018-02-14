@@ -1,0 +1,286 @@
+/* ---------- DOCKBAR ---------- */
+
+.aui {
+  .portlet-dockbar {
+    .portlet-borderless-container {
+      padding: 0;
+      background: transparent;
+    }
+    
+    .dockbar {
+      .navbar-inner .container .collapse .nav-account-controls>li {
+        background: #006491;
+        background-image: none;
+      }
+      
+      .nav {
+        li.dropdown.user-avatar .user-avatar-image {
+          @include box-shadow(none);
+        }
+      }
+      
+      &.navbar {
+        .nav {
+          li {
+            &.dropdown {
+              &.active {
+                .dropdown-toggle {
+                  background-color: transparent;
+                  
+                  &:hover {
+                    color: #FFF;
+                  }
+                }
+              }
+              
+              &.staging-toggle .dropdown-menu {
+                background-color: #55B8EC;
+              }
+            }
+          }
+          
+          >li {
+            >a {
+              margin: 0 0 0 0;
+              padding: 6px 10px;
+              
+              &:hover {
+                background-color: #2FA4F5;
+              }
+            }
+          }
+        }
+      }
+      
+      .info-button {
+        top: 9px;
+        
+        a {
+          margin-top: -4px;
+          
+          &:hover {
+            color: #FFF;
+          }
+        }
+      }
+      
+      .staging-bar {
+        .staging-toggle {
+          color: #FFF;
+          
+          li a {
+            color: #FFF;
+            font-weight: 300;
+            text-decoration: none;
+          }
+          
+          .btn-link {
+            color: #FFF;
+            font-size: 12px;
+          }
+        }
+      }
+      .page-customization-bar .btn {
+        border-color: transparent;
+        
+        &:hover,
+        &:focus {
+          background: transparent;
+          text-decoration: underline;
+        }
+      }
+      
+      .user-notifications-count {
+        background-color: #e31837;
+        color: white;
+        @include border-radius(50%);
+        border-width: 0;
+        font-size: .86em;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .dockbar,
+  .dockbar-split .dockbar {
+    .navbar-inner {
+      min-height: 43px;
+      
+      .nav {
+        >li {
+          border: none;
+          
+          >a {
+            &:hover {
+              background-color: black;
+              @include transition(opacity 0.3s ease);
+            }
+          }
+        }
+      }
+      
+      /*Responsiveness*/
+      @include respond-to(tablet) {
+        #_145_navSiteNavigationNavbarBtn {
+          display: none;
+        }
+        
+        .nav-collapse {
+          .nav>li {
+            float: none;
+            
+            >a {
+              font-weight: bold;
+            }
+          }
+          
+          .open>.dropdown-menu {
+            display: block;
+          }
+          
+          .dropdown-menu {
+            top: auto;
+            float: none;
+            max-width: none;
+            border: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  
+  .dockbar-split, .controls-hidden .dockbar-split {
+    @include respond-to(phone) {
+      #_145_navSiteNavigationNavbarBtn {
+        &::before {
+          content: "Pages";
+          margin-right: 3px;
+          font-size: 10px;
+          bottom: 3px;
+          position: relative;
+        }
+      }
+    }
+    
+    .portlet-dockbar {
+      position: relative;
+      height: 43px;
+      line-height: 43px;
+      background: #006491;
+      
+      .dockbar {
+        height: auto;
+        position: relative;
+        
+        &.navbar-static-top .collapse .nav-account-controls {
+          position: relative;
+        }
+        
+        .info-button {
+          top: 9px;
+        }
+        
+        .navbar-inner {
+          @include box-shadow(none);
+          @include text-shadow(none);
+          
+          .nav {
+            li.dropdown.open {
+              >.dropdown-toggle {
+                background-color: $dockbarOpenGradientStart;
+                @include background-image(linear-gradient($dockbarOpenGradientStart, $dockbarOpenGradientEnd));
+                @include box-shadow(none);
+              }
+            }
+            
+            li.dropdown.active {
+              >.staging-link.dropdown-toggle {
+                background-color: #55B8EC;
+                background-image: none;
+              }
+            }
+          }
+          
+          .nav-account-controls {
+            border-top: 1px solid #00AEFF;
+            border: none;
+            right: 0px;
+            
+            &.nav-account-controls-notice {
+              margin-top: 10px;
+              top: 50px;
+            }
+            
+            .icon-caret-down {
+              background-color: transparent;
+              margin: 3px 0 0;
+              padding: 0;
+            }
+          }
+          
+          .nav-add-controls {
+            background: transparent;
+            border-top-width: 0;
+            top: 120px;
+            left: 0;
+            
+            &.nav-add-controls-notice {
+              top: 70px;
+            }
+            
+            >li {
+              margin: 5px;
+              background-color: transparent;
+              @include background-image(none);
+              
+              >a {
+                background: #32363a;
+                line-height: 20px;
+                padding: 4px;
+                
+                [class^="icon-"], [class*=" icon-"] {
+                  font-size: 20px;
+                }
+                
+                &:hover {
+                  background: #3A8CAE;
+                }
+                
+                &.toggle-controls-link {
+                  background: $brand-color-2-light;
+                  
+                  .controls-state-icon {
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+          
+          .page-customization-bar {
+            background-color: #6DA4E4;
+            background-color: rgba(109, 168, 228, 0.9);
+            line-height: 20px;
+          }
+          
+          .page-customization-bar-text {
+            height: 43px;
+          }
+          
+          .staging-bar {
+            margin: 6px 0;
+            
+            >li {
+              background: transparent;
+            }
+            
+            staging-toggle>a {
+              @include border-radius(3px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

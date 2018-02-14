@@ -1,0 +1,62 @@
+ /* ---------- HEADER ---------- */
+ 
+ #banner {
+   .logo {
+     position: absolute;
+     left: 15px;
+     top: 9px;
+     z-index: 303;
+     @include transition(0.3s ease);
+     
+     >img {
+       height: 25px;
+       width: auto;
+     }
+     
+     @include respond-to(phone, tablet) {
+       z-index: 302;
+     }
+   }
+   
+   #heading {
+     border-bottom: 1px solid #ddd;
+     background-color: white;
+     
+     .site-title {
+       margin: 0;
+       vertical-align: bottom;
+       
+       a:hover {
+         text-decoration: none;
+       }
+       
+       .site-name {
+         font-family: PizzaPress, Arial, sans-serif !important;
+         color: #666;
+         padding: 3px 0;
+       }
+     }
+     
+     /*Responsiveness*/
+     @include respond-to(desktop) {
+       padding: .75em 1.5em;
+       
+       .site-title {
+         display: inline-block;
+       }
+     }
+     
+     @include respond-to(phone, tablet) {
+       text-align: center;
+       padding: 0;
+     }
+   }
+ }
+
+.sticky {
+  #banner {
+    .logo {
+       position: fixed;
+    }
+  }
+}

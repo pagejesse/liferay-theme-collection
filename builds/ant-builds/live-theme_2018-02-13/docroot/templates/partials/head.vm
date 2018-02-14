@@ -1,0 +1,12 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+$theme.include($top_head_include)
+
+<title>$the_title - $company_name</title>
+
+#parse ("$full_templates_path/partials/social-meta-tags.vm")
+
+#parse ("$full_templates_path/partials/touch-icons.vm")
+
+#parse ("$full_templates_path/partials/ga.vm")

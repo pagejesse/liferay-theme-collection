@@ -1,0 +1,17 @@
+<header id="banner" role="banner">
+
+  #parse ("$full_templates_path/partials/logo.vm")
+
+  #dockbar()
+
+  #if ($is_signed_in)
+
+    #parse ("$full_templates_path/partials/nav_static.vm")
+    
+    #parse ("$full_templates_path/partials/role_btns.vm")
+
+    <nav id="breadcrumbs">#breadcrumbs()</nav>
+
+    #parse ("$full_templates_path/partials/site_heading.vm")
+  #end
+</header>
