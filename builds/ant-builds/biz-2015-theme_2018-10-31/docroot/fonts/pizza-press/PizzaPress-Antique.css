@@ -1,0 +1,11 @@
+/* Webfont: PizzaPress-Antique */@font-face {
+    font-family: 'PizzaPressAntique';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Antique.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Antique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Antique.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Antique.svg#PizzaPress-Antique') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Antique.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+

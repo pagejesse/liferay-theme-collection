@@ -1,0 +1,159 @@
+/* ---------- STATIC NAVIGATION ---------- */
+
+.primary_nav_wrap {
+  background: $brand-color-1;
+  border-top: solid 1px #0080bb;
+  opacity: 1;
+  @include transition(opacity 0.3s ease);
+  
+  .topLevel {
+    padding: 0 10px;
+    @include transition(0.3s ease);
+  }
+  
+  ul {
+    list-style: none;
+    float: left;
+    margin: 0;
+    
+    li, a, label {
+      font-family: "OneDot-Bold";
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+      text-shadow: none;
+      cursor: pointer;
+      
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+    
+    li {
+      position: relative;
+      float: left;
+      padding: 0 12px;
+      line-height: 32px;
+      border-right: dotted 2px #0080bb;
+      @include transition(background-color 0.3s ease);
+      
+      ul {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: black;
+
+        ul {
+          display: block;
+        }
+      }
+    }
+    
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    
+    /*First Level Dropdown*/
+    ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: black;
+      padding: 0;
+      z-index: 351;
+      
+      li {
+        float: none;
+        width: 150px;
+        border-right: solid 2px white;
+        
+        &:hover,
+        &:focus {
+          background-color: $brand-color-1-light;
+        }
+        
+        input {
+          display: none;
+        }
+        
+        a, label {
+          line-height: 120%;
+          padding: 10px 0;
+          margin: 0;
+          display: block;
+          
+          &:hover,
+          &:focus {
+            color: inherit;
+          }
+        }
+        
+        /*Second Level Dropdown*/
+        input ~ ul.expandable {
+          height: 0;
+          overflow: hidden;
+          @include transition(0.3s ease);
+        }
+        
+        input:checked ~ ul.expandable {
+          height: 100%;
+          overflow: visible;
+          display: block;
+          position: relative;
+          top: 0;
+          left: 5%;
+          margin-bottom: 15px;
+          background-color: #333333;
+          
+          /*Third Level Dropdown*/
+          ul {
+            background-color: #666666;
+          }
+        }
+        
+        .icon-chevron-down {
+          position: absolute;
+          right: 5px;
+          bottom: 0;
+          padding-left: 5px;
+          line-height: 32px;
+          display: inline-block;
+          color: #ccc;
+          transition: ease .3s;
+        }
+        
+        input:checked ~ span.icon-chevron-down {
+          transform: rotate(180deg) ;
+          -webkit-transform: rotate(180deg) ;
+          -moz-transform: rotate(180deg) ;
+          -o-transform: rotate(180deg) ;
+          -ms-transform: rotate(180deg) ;
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+  .primary_nav_wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: .9;
+    padding: 5px 0;
+
+    .topLevel {
+      @include transition(0.3s ease);
+      @include respond-to(desktop) {
+        padding-left: 140px;
+      }
+    }
+  }
+}

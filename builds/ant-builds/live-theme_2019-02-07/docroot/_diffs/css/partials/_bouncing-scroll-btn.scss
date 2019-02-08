@@ -1,0 +1,45 @@
+/* ---------- BOUNCING SCROLL BUTTON ---------- */
+/* for role landing pages only */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-5px);}
+}
+
+.bouncingArrow {
+    position: fixed;
+    display: table;
+    text-align: center;
+    width: 100%;
+    bottom: 15px;
+    opacity: .8;
+    visibility: visible;
+    transition: opacity 0.3s linear, visibility .6s;
+    transition-delay: .20s;
+  
+  .arrowSvg {
+    background-color: black;
+    border-radius: 50%;
+    display: table-cell;
+    text-align: center;
+    width: 4em;
+
+        svg {
+          width: 2em;
+          height: 4em;
+      }
+
+    // animations
+    animation-name: bounce;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+
+}
+
+.hideBouncingArrow {
+    visibility: hidden;
+    opacity: 0;
+}

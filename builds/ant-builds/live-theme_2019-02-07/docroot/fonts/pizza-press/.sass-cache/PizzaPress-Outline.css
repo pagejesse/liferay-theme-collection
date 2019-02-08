@@ -1,0 +1,10 @@
+/* Webfont: PizzaPress-Outline */
+@font-face {
+  font-family: 'PizzaPressOutline';
+  font-style: 'normal';
+  font-weight: 'normal';
+  src: url("PizzaPress-Outline.eot");
+  /* IE9 Compat Modes */
+  src: url("PizzaPress-Outline.eot?#iefix") format("embedded-opentype"), url("PizzaPress-Outline.woff") format("woff"), url("PizzaPress-Outline.svg#PizzaPress-Outline") format("svg"), url("PizzaPress-Outline.ttf") format("truetype");
+  /* Safari, Android, iOS */ }
+

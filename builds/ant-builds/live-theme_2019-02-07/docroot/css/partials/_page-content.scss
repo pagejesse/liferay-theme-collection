@@ -1,0 +1,14 @@
+/* ---------- PAGE CONTENT ---------- */
+
+#page-content {
+  @include respond-to(desktop, tablet) {
+    border-right: 1px solid $brand-color-6;
+  }
+}
+
+#content {
+  position: relative;
+  background-color: white;
+  padding: 1.8em;
+  @include border-radius(0);
+}
