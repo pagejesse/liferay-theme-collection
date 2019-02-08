@@ -1,0 +1,29 @@
+.aui {
+  #page {
+    #faq {
+      .content-block {
+        h3,
+        h4 {
+          text-align: left;
+          text-transform: none;
+        }
+
+        ul {
+          margin: 15px 0;
+          padding: 0 0 0 25px;
+
+          li {
+            list-style: square;
+          }
+        }
+
+        .box-number {
+          font-size: 20px;
+          padding: 2px 5px;
+          background-color: #00afdb;
+          color: #f8f8f8;
+        }
+      }
+    }
+  }
+}

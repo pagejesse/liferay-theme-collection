@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")"="lang.dir")""=")" "" lang="$w3c_language_id">
+
+    <head>
+        #parse ("$full_templates_path/partials/head.vm")
+    </head>
+	
+	#if (!($is_signed_in))
+	 #if ($request.getSession().getAttribute("LIFERAY_SHARED_AUTH") != "SUCCESS")
+	  #if(!$layout.getName($w3c_language_id).equalsIgnoreCase("login"))
+	        <body onload="window.location='/web/online-vendor-expo/login'"/>
+	        #stop
+	  #end
+	 #end
+	#end
+		
+    <body class="$css_class">
+    	<script src="$javascript_folder/main.js"></script>
+        $theme.include($body_top_include)
+
+        <div class="container-fluid" id="wrapper">
+            #if ($is_signed_in)
+                <div class="dlive">
+                    <a href="https://dlive.dominos.com">dlive Home</a>
+                </div>
+                #dockbar()
+            #else
+                #if (!$layout.getName($w3c_language_id).equalsIgnoreCase("login"))
+                	#if ($request.getSession().getAttribute("LIFERAY_SHARED_AUTH") == "SUCCESS")
+                    	<a onclick="javascript:location.href='/web/online-vendor-expo/login?lgparam=1'" style="cursor: pointer; color: white !important;">
+                        	<div class="dlive">Log Out</div>
+                        </a>
+                    #end
+                #end
+            #end
+
+            #parse ("$full_templates_path/partials/header.vm") 
+            #parse ("$full_templates_path/partials/main.vm") 
+            #parse ("$full_templates_path/partials/footer.vm")
+        </div>
+
+        $theme.include($body_bottom_include)
+
+        $theme.include($bottom_include)
+
+        #parse ("$full_templates_path/partials/node.vm")
+    </body>
+
+</html>

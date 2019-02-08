@@ -1,0 +1,25 @@
+<main class="main-content row-fluid">
+  <div id="page-content" class="span10">
+
+    <div id="content">
+      #if ($selectable)
+        $theme.include($content_include)
+      #else
+        $portletDisplay.recycle()
+
+        $portletDisplay.setTitle($the_title)
+
+        $theme.wrapPortlet("portlet.vm", $content_include)
+      #end
+    </div>  
+  </div>
+
+  <div id="site-nav" class="span2">
+      #if ($is_signed_in)
+        #parse ("$full_templates_path/partials/ql_feedback_btns.vm")
+      #end
+      #if ($has_navigation)
+        #parse ("$full_templates_path/partials/nav_site.vm")
+      #end
+  </div>
+</main>

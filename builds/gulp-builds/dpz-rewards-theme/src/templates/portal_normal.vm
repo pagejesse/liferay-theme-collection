@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" lang="$w3c_language_id">
+
+    <head>
+        #parse ("$full_templates_path/partials/head.vm")
+    </head>
+
+    <body class="$css_class">
+        <script src="$javascript_folder/main.js"></script>
+        $theme.include($body_top_include)
+
+        <div class="container-fluid" id="wrapper">
+            #if ($is_signed_in)
+                #dockbar()
+            #end
+
+            #parse ("$full_templates_path/partials/header.vm") 
+            #parse ("$full_templates_path/partials/main.vm") 
+            #parse ("$full_templates_path/partials/footer.vm")
+        </div>
+
+        $theme.include($body_bottom_include)
+
+        $theme.include($bottom_include)
+
+        #parse ("$full_templates_path/partials/node.vm")
+    </body>
+
+</html>

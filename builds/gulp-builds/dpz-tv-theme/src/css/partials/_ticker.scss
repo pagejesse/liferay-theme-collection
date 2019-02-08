@@ -1,0 +1,40 @@
+ul.ticker {
+  position: absolute; 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+  transition: .25s;
+  
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    font-family: 'PizzaPress', sans-serif; 
+    font-size: 24px;
+    line-height: normal;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #FAACA8;
+    background-image: -webkit-linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    background-image: -moz-linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    background-image: -o-linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    box-shadow: inset 5px -1px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  li:first-child {
+    font-size: 32px;
+    background-color: #fd5b73;
+    background-image: -webkit-linear-gradient(135deg, #fd5b73 0%, #e31837 100%);
+    background-image: -moz-linear-gradient(135deg, #fd5b73 0%, #e31837 100%);
+    background-image: -o-linear-gradient(135deg, #fd5b73 0%, #e31837 100%);
+    background-image: linear-gradient(135deg, #fd5b73 0%, #e31837 100%);
+  }
+}

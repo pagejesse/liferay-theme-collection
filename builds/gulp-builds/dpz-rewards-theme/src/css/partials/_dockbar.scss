@@ -1,0 +1,26 @@
+.aui {
+  .portlet-dockbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    .dockbar {
+      float: right;
+      margin-right: 24px;
+
+      .navbar-inner {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+      }
+
+      #_145_navAccountControlsNavbarCollapse,
+      #_145_navAccountControlsNavbarBtn,
+      // #_145_navAddControlsNavbarBtn,
+      #_145_navSiteNavigationNavbarBtn {
+        display: none;
+      }
+    }
+  }
+}

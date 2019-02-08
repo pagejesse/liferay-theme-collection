@@ -1,0 +1,90 @@
+//temp
+.rewards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 14px;
+  color: #555;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .section {
+    padding: 0 20px;
+    max-width: 485px;
+    margin-bottom: 25px;
+
+    .rewards-header {
+      background-color: #006491;
+      padding: 12px 24px;
+      color: white;
+      font-size: 20px;
+      line-height: 24px;
+      font-family: "PizzaPress", "Arial Narrow", sans-serif;
+      text-align: center;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+
+      sup {
+        font-size: 14px;
+      }
+    }
+
+    .rewards-content {
+      text-align: center;
+      margin: 0 8px;
+      padding: 12px;
+      border: 3px solid #006491;
+      border-width: 0 3px 3px 3px;
+      border-radius: 0 0 2px 2px;
+      -webkit-border-radius: 0 0 2px 2px;
+      -moz-border-radius: 0 0 2px 2px;
+      -ms-border-radius: 0 0 2px 2px;
+      -o-border-radius: 0 0 2px 2px;
+
+      .rewards-heading {
+        color: #006491;
+        font-size: 28px;
+        line-height: 30px;
+        font-family: "PizzaPress", "Arial Narrow", sans-serif;
+        margin-bottom: 10px;
+      }
+
+      .rewards-button {
+        line-height: 50px;
+
+        a {
+          background-color: #e31837;
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+          padding: 10px 20px;
+          border-radius: 2px;
+          ;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+        }
+      }
+
+      .rewards-legal {
+        font-size: 11px;
+        color: #888;
+        line-height: 12px;
+        border-top: dotted 2px #ccc;
+        padding-top: 12px;
+      }
+    }
+  }
+
+  .smart-slice {
+    // border-right: dotted 5px #006491;
+  }
+}

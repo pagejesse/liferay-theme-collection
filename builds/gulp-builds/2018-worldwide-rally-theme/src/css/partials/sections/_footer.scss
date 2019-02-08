@@ -1,0 +1,27 @@
+.aui {
+  #page {
+    .footer {
+      padding: 17px 0 14px;
+      color: #bfbfbf;
+      background: #3d3d3d;
+    }
+
+    .footer a:hover {
+      // color: #bfbfbf;
+    }
+
+    .copyright {
+      padding: 8px 0;
+    }
+
+    .footer a.down_btn {
+      position: static;
+      margin: 0;
+      padding: 0;
+      display: block;
+      width: 32px;
+      height: 36px;
+      background: url(../images/top_btn.png) no-repeat;
+    }
+  }
+}

@@ -1,0 +1,245 @@
+.aui {
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  font,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    outline: none !important;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 20px;
+    font-size: 13px;
+    color: #797979;
+    background-color: #f8f8f8;
+  }
+
+  #page {
+    a,
+    input,
+    select,
+    textarea {
+      outline: none !important;
+      border-radius: 0;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+    }
+
+    img {
+      vertical-align: top;
+      border: 0;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      max-width: 100%;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    ::selection {
+      background: #00afdb;
+      color: #FFF;
+    }
+
+    ::-moz-selection {
+      background: #00afdb;
+      /* Firefox */
+      color: #fff;
+    }
+
+    .reverse {
+      color: #b6b6b6;
+    }
+
+    a {
+      color: #00afdb;
+      text-decoration: none !important;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+    }
+
+    .reverse a {
+      color: #e5f7fb;
+    }
+
+    a:hover {
+      color: #555555;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      text-transform: none;
+      font-family: "PizzaPress";
+      font-weight: 400;
+      line-height: 75px;
+      font-size: 75px;
+
+      &.portlet-title {
+      font-size: 24px;
+      line-height: 26px;
+      color: black;
+
+        img {
+          display: none;
+        }
+      }
+    }
+
+    h2 {
+      margin: 0 0 73px;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 300;
+      line-height: 40px;
+      font-size: 44px;
+    }
+
+    .reverse h2 {
+      color: white;
+    }
+
+    h3 {
+      margin: 0 0 21px;
+      padding: 0;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 300;
+      line-height: 26px;
+      font-size: 24px;
+      color: #303030;
+    }
+
+    .reverse h3 {
+      color: #fff797;
+    }
+
+    h4 {
+      margin: 0 0 20px;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 22px;
+      font-size: 17px;
+      color: #505050;
+    }
+
+    .reverse h4 {
+      color: #e5f7fb;
+    }
+
+    p {
+      margin: 0 0 15px;
+      padding: 0;
+    }
+
+    .pizzaPress {
+      font-family: "PizzaPress", "Arial Narrow", sans-serif;
+      font-weight: bold;
+    }
+
+    .finePrint {
+      font-size: 9px;
+    }
+
+    .general_btn {
+      display: block;
+      cursor: pointer;
+      width: 98%;
+      padding: 9px 0 10px;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0;
+      text-align: center;
+      text-shadow: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      line-height: 20px;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+    }
+
+    .general_btn:hover {
+      background-color: #ccc;
+    }
+
+    .opacity {
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+  }
+}

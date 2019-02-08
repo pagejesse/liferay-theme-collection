@@ -1,0 +1,11 @@
+/* Webfont: PizzaPress-Ornaments */@font-face {
+    font-family: 'PizzaPressOrnaments';
+    font-style: 'normal';
+    font-weight: 'normal';
+    src: url('PizzaPress-Ornaments.eot'); /* IE9 Compat Modes */
+    src: url('PizzaPress-Ornaments.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PizzaPress-Ornaments.woff') format('woff'), /* Modern Browsers */
+         url('PizzaPress-Ornaments.svg#PizzaPress-Ornaments') format('svg'), /* Legacy iOS */
+         url('PizzaPress-Ornaments.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+

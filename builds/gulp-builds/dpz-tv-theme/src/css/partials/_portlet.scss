@@ -1,0 +1,15 @@
+.portlet-borderless,
+.portlet-borderless .portlet-borderless-container,
+.portlet-borderless .portlet-borderless-container .portlet-body,
+.portlet-borderless .portlet-borderless-container .portlet-body .journal-content-article {
+  height: 100%;
+}
+
+.lfr-meta-actions {
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  opacity: .5;
+  z-index: 3;
+}

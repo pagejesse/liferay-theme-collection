@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>DPZ TV | Domino's</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="$images_folder/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="$images_folder/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="$images_folder/favicon-16x16.png">
+  <link rel="manifest" href="$images_folder/manifest.json">
+  <link rel="mask-icon" href="$images_folder/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="$images_folder/favicon.ico">
+  <meta name="msapplication-config" content="$images_folder/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="$css_class">
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div id="heading">
+      <div class="site-logo">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 42.1 42.1" enable-background="new 0 0 42.1 42.1" xml:space="preserve">
+        <g>
+          <path fill="none" d="M9.1,24.7c-0.8,0-1.7,0.3-2.3,1c-0.6,0.6-1,1.5-1,2.3c0,0.8,0.3,1.7,1,2.3c0.6,0.6,1.5,1,2.3,1
+            c0.8,0,1.7-0.3,2.3-1c0.6-0.6,1-1.5,1-2.3c0-0.8-0.3-1.7-1-2.3C10.8,25.1,10,24.7,9.1,24.7z"/>
+          <path fill="none" d="M18.8,31.5c0.8,0,1.7-0.3,2.3-1c0.6-0.6,1-1.5,1-2.3c0-0.8-0.3-1.7-1-2.3c-0.6-0.6-1.5-1-2.3-1
+            c-0.8,0-1.7,0.3-2.3,1c-0.6,0.6-1,1.5-1,2.3c0,0.8,0.3,1.7,1,2.3C17.1,31.2,18,31.5,18.8,31.5z"/>
+          <path fill="none" d="M29.1,1.6c-0.3-0.3-0.6-0.4-1-0.4c-0.4,0-0.7,0.1-1,0.4l-9.6,9.6l-2.8,2.8l13.4,13.4l1.1-1.1L40.5,15
+            c0.6-0.6,0.6-1.4,0-2L29.1,1.6z"/>
+          <path fill="#FFFFFF" d="M41.3,12.2L29.9,0.7C29.4,0.3,28.8,0,28.1,0c-0.7,0-1.3,0.3-1.8,0.7l-9.6,9.6l-16,16c-1,1-1,2.6,0,3.6
+            l11.4,11.4c0.5,0.5,1.1,0.7,1.8,0.7c0.7,0,1.3-0.3,1.8-0.7L30.1,27l11.2-11.2C42.3,14.8,42.3,13.2,41.3,12.2z"/>
+          <path fill="#E31837" d="M40.5,13L29.1,1.6c-0.6-0.6-1.4-0.6-2,0L14.7,13.9l13.4,13.4L40.5,15C41.1,14.4,41.1,13.5,40.5,13z
+             M30.5,16.3c-0.6,0.6-1.5,1-2.3,1s-1.7-0.3-2.3-1c-0.6-0.6-1-1.5-1-2.3c0-0.8,0.3-1.7,1-2.3c0.6-0.6,1.5-1,2.3-1
+            c0.8,0,1.7,0.3,2.3,1c0.6,0.6,1,1.5,1,2.3C31.4,14.8,31.1,15.7,30.5,16.3z"/>
+          <path fill="#006491" d="M1.6,27.1c-0.6,0.6-0.6,1.4,0,2L13,40.5c0.3,0.3,0.6,0.4,1,0.4c0.4,0,0.7-0.1,1-0.4l12.4-12.4L13.9,14.7
+            L1.6,27.1z M11.5,30.4c-0.6,0.6-1.5,1-2.3,1c-0.8,0-1.7-0.3-2.3-1c-0.6-0.6-1-1.5-1-2.3c0-0.8,0.3-1.7,1-2.3c0.6-0.6,1.5-1,2.3-1
+            c0.8,0,1.7,0.3,2.3,1c0.6,0.6,1,1.5,1,2.3C12.4,28.9,12.1,29.8,11.5,30.4z M16.5,25.8c0.6-0.6,1.5-1,2.3-1c0.8,0,1.7,0.3,2.3,1
+            c0.6,0.6,1,1.5,1,2.3c0,0.8-0.3,1.7-1,2.3c-0.6,0.6-1.5,1-2.3,1c-0.8,0-1.7-0.3-2.3-1c-0.6-0.6-1-1.5-1-2.3
+            C15.5,27.3,15.8,26.5,16.5,25.8z"/>
+        </g>
+        <path fill="#FFFFFF" d="M18.8,39.2c0.5,0,0.9,0.4,0.9,0.8c0,0.5-0.4,0.8-0.9,0.8c-0.5,0-0.9-0.4-0.9-0.8
+          C18,39.6,18.4,39.2,18.8,39.2z M18.8,39.4c-0.4,0-0.7,0.3-0.7,0.7c0,0.4,0.3,0.7,0.7,0.7c0.4,0,0.7-0.3,0.7-0.7
+          C19.5,39.7,19.2,39.4,18.8,39.4z M18.7,40.6h-0.2v-1h0.4c0.2,0,0.3,0.1,0.3,0.3c0,0.2-0.1,0.3-0.3,0.3l0.3,0.4h-0.2l-0.3-0.4h-0.2
+          V40.6z M18.7,40h0.2c0.2,0,0.2-0.1,0.2-0.2c0-0.1,0-0.1-0.2-0.1h-0.2V40z"/>
+        <path fill="none" d="M9.1,24.7c-0.8,0-1.7,0.3-2.3,1c-0.6,0.6-1,1.5-1,2.3c0,0.8,0.3,1.7,1,2.3c0.6,0.6,1.5,1,2.3,1
+          c0.8,0,1.7-0.3,2.3-1c0.6-0.6,1-1.5,1-2.3c0-0.8-0.3-1.7-1-2.3C10.8,25.1,10,24.7,9.1,24.7z"/>
+        <path fill="none" d="M18.8,31.5c0.8,0,1.7-0.3,2.3-1c0.6-0.6,1-1.5,1-2.3c0-0.8-0.3-1.7-1-2.3c-0.6-0.6-1.5-1-2.3-1
+          c-0.8,0-1.7,0.3-2.3,1c-0.6,0.6-1,1.5-1,2.3c0,0.8,0.3,1.7,1,2.3C17.1,31.2,18,31.5,18.8,31.5z"/>
+        <path fill="none" d="M29.1,1.6c-0.3-0.3-0.6-0.4-1-0.4c-0.4,0-0.7,0.1-1,0.4l-9.6,9.6l-2.8,2.8l13.4,13.4l1.1-1.1L40.5,15
+          c0.6-0.6,0.6-1.4,0-2L29.1,1.6z"/>
+        </svg>
+      </div>
+			<h1 class="site-title">
+				$the_title
+			</h1>
+		</div>
+	</header>
+
+	<div id="content">
+    <div id="left-panel-80" class="left-panel-80">
+      #if ($selectable)
+        $theme.include($content_include)
+      #else
+        $portletDisplay.recycle()
+
+        $portletDisplay.setTitle($the_title)
+
+        $theme.wrapPortlet("portlet.vm", $content_include)
+      #end
+    </div>
+    <div id="right-panel-20" class="right-panel-20">
+      #set ($VOID = $velocityPortletPreferences.setValue('groupId', $themeDisplay.getScopeGroupId().toString()))
+      #set ($VOID = $velocityPortletPreferences.setValue('portletSetupShowBorders', 'false'))
+      #set ($portlet_id = '56')
+      #set ($my_portlet_id = "${portlet_id}_INSTANCE_ticker")
+      $theme.runtime($my_portlet_id, "", $velocityPortletPreferences.toString())
+      #set ($VOID = $velocityPortletPreferences.reset())
+    </div>
+	</div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-2.1.3.min.js"
+  integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM="
+  crossorigin="anonymous">
+</script>
+
+$theme.include($body_bottom_include) 
+$theme.include($bottom_include)
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.aui {
+  .site-logo {
+    float: left;
+    width: 40px;
+    height: auto;
+    padding: 10px;
+  }
+  .site-title {
+    margin: 0;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    font-family: 'PizzaPress', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    color: aliceblue;
+    background-color: #2294c8;
+    background-image: -webkit-linear-gradient(right, #2294c8 0%, #006491 99%);
+    background-image: -o-linear-gradient(right, #2294c8 0%, #006491 99%);
+    background-image: linear-gradient(to left, #2294c8 0%, #006491 99%);
+  }
+}

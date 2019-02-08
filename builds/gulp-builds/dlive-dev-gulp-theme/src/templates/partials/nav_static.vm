@@ -1,0 +1,490 @@
+<nav id="nav_static" class="primary_nav_wrap clearfix">
+    <ul class="topLevel">
+        <li class="okayNavCollapse">
+            <span>Training</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/training/home">Training Home</a>
+                </li>
+                <li>
+                    <a href="/group/launchpad/timeline-2017">Launchpad</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="traningMenu_ats" id="traningMenu_ats"/>
+                    <label for="traningMenu_ats">ATS</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/ats/welcome">ATS Home</a>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="traningMenu_atsResources" id="traningMenu_atsResources"/>
+                            <label for="traningMenu_atsResources">Resources</label>
+                            <ul class="expandable">
+                                <li>
+                                    <a href="/group/ats/whyats">Why ATS?</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/how-does-it-work-workflow">How Does It Work?</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/posting-jobs">Posting Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/new-hire-emails">New Hire Emails</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/e-verify">E-Verify Posters</a>
+                                </li>
+                                <li>
+                                    <a href="/documents/545690/670420/Supported_Browsers_and_Languages.pdf" target="_blank">Pop Up Blocker</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/ats-support">ATS FAQs</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/dcc">DCC Instructions</a>
+                                </li>
+                            </ul>
+                            <span class="icon-chevron-down"></span>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="traningMenu_atsTraining" id="traningMenu_atsTraining"/>
+                            <label for="traningMenu_atsTraining">ATS Training</label>
+                            <ul class="expandable">
+                                <li>
+                                    <a href="/group/ats/atstraining">ATS Training Home</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/rapidhiretraining">RapidHire</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/onboarding-training-center-user-guide-demo">Onboarding</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/brassringtraining">BrassRing</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/assessments">Assessments</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/reports">Reporting</a>
+                                </li>
+                                <li>
+                                    <a href="/group/ats/background-check-training-items">Background Checks</a>
+                                </li>
+                            </ul>
+                            <span class="icon-chevron-down"></span>
+                        </li>
+                        <li>
+                            <a href="http://chat.ats.dominos.com/" target="_blank">ATS LiveChat</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="http://hpyou.dominos.com/saml" target="_blank">HPYou</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="traningMenu_hpu" id="traningMenu_hpu"/>
+                    <label for="traningMenu_hpu">HPU</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/hpu">HPU Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/hpu/print">Print</a>
+                        </li>
+                        <li>
+                            <a href="/group/hpu/shop">Shop</a>
+                        </li>
+                        <li>
+                            <a href="/group/hpu/shortcut">Shortcut</a>
+                        </li>
+                        <li>
+                            <a href="/group/hpu/help-page">Help</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="/group/products/home">Product Training</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="traningMenu_fms" id="traningMenu_fms"/>
+                    <label for="traningMenu_fms">Franchise Management School</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/fms">FMS Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/fms/scholarship-opportunities">Scholarship Opportunities</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="http://www.singlestorefront.com/dominos" target="_blank">Shop</a>
+                </li>
+                <li>
+                    <a href="/group/school-lunch">Smart Slice</a>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Marketing</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/marketing/home">Marketing Home</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="marketing_advertising" id="marketing_advertising"/>
+                    <label for="marketing_advertising">Advertising and Merchandising</label>
+                    <ul class="expandable">
+                        <li>
+                            #set ($userLocalService =
+                            $serviceLocator.findService("com.liferay.portal.service.UserLocalService"))
+                            #set ($user = $userLocalService.getUserById($getterUtil.getLong($request.remote-user)))
+                            #set ($user_screenname = $user.getScreenName())
+                            #set ($screenname=$permissionChecker.getUser().getScreenName())
+                            #set($qlLocalService =
+                            $utilLocator.findUtil("dominos-qlink-hook","com.dominos.qlink.tools.MyQuickLinkTools"))
+                            #set($text_out = $qlLocalService.getPrecMktgChecksum($screenname)) 
+                            #set ($upper=$screenname.toUpperCase())
+
+                            <script language="JavaScript" type="text/javascript">
+                                function launchtoolprintorder() {
+                                    document
+                                        .printorder
+                                        .submit();
+                                }
+                            </script>
+
+                            <form
+                                action="https://www.connectmarketingonline.net/cmoverify/login.aspx"
+                                name="printorder"
+                                method="Get"
+                                target="_blank"
+                                style="margin: 0;">
+                                <input name="userid" type="hidden" value="$upper"/>
+                                <input name="checksum" type="hidden" value="$text_out"/>
+                                <input type="hidden"/>
+                                <a href="javascript:launchtoolprintorder()">CMO Tool - Print</a>
+                            </form>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/flyers">Flyers</a>
+                        </li>
+                        <li>
+                            <a href="/group/hispanicmarketing">Hispanic</a>
+                        </li>
+                        <li>
+                            <a href="/group/marketingresources/menuboards">Menu Boards</a>
+                        </li>
+                        ## <li>
+                        ##     <a href="/group/lsm/outdoor-billboard-2017">Billboards</a>
+                        ## </li>
+                        <li>
+                            <a href="/group/marketingresources/onholdmessages">On Hold Messages</a>
+                        </li>
+                        <li>
+                            <a href="/group/marketing/print">Print Resources</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <input type="checkbox" name="marketing_coupons" id="marketing_coupons"/>
+                    <label for="marketing_coupons">Coupons/Digital</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/marketing/coupon">Active Coupon List</a>
+                        </li>
+                        <li>
+                            <a href="/group/marketing/coupon-image-management">Coupon Image Management</a>
+                        </li>
+                        <li>
+                            <a href="https://ems-us.dominos.com/" target="_blank">EMS</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="/group/lsm/calendars">Marketing Calendar</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="marketing_programs" id="marketing_programs"/>
+                    <label for="marketing_programs">Programs/Initiatives</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/marketing/coke">Coke</a>
+                        </li>
+                        <li>
+                            <a href="/group/marketing/giftcards">Gift Cards</a>
+                        </li>
+                        <li>
+                            <a href="/group/school-lunch/home">School Lunch</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/community1">Community</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/competitiveintrusion">Competitive Intrusion</a>
+                        </li>
+                        <li>
+                            <a href="/group/pizzatheater/home">Grand Opening</a>
+                        </li>
+                        <li>
+                            <a href="/group/rewards/overview">Piece of the Pie Rewards</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <input type="checkbox" name="marketing_lsm" id="marketing_lsm">
+                    <label for="marketing_lsm">Local Store Marketing</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/lsm/home">LSM Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/flyers">Flyers</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/school1">School</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/community1">Community</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/lsm-101">LSM 101</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/special-occasions-events-holidays">Special Occasions</a>
+                        </li>
+                        <li>
+                            <a href="/group/lsm/competitiveintrusion">Competitive Intrusions</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <input type="checkbox" name="marketing_pr" id="marketing_pr">
+                    <label for="marketing_pr">Public Relations</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/pr/home">PR Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/pr-101">PR 101</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/prtoolkits">Toolkits</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/crisis-communications">Crisis Communication</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/in-the-news">In the News</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/fire-safety-program">Fire Safety</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/social-media">Social Media</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/future-farmers-of-america">Future Farmers of America</a>
+                        </li>
+                        <li>
+                            <a href="/group/pr/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Operations</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/operations/home">Operations Home</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="operations_standards" id="operations_standards"/>
+                    <label for="operations_standards">Standards</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/standardsandguides/standards">Standards Home</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/documents/469563/863889/Product+Standards+6.26.17.pdf/3eb36728-9c24-460a-8cd7-b72302e714f6"
+                                target="_blank">Product</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/documents/468934/4048566/Domino%27s+Operating+Standards/30897f61-9a03-4087-901d-6fbf215c458f"
+                                target="_blank">Operating</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/documents/468934/5498259/Pizza+Theater+Standards+%26+Planogram/c5d6708c-0fab-4efe-b523-8abdb7010cf9"
+                                target="_blank">Pizza Theater</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="/group/safety-and-loss-prevention/training-and-documentation">Safety and Loss Prevention</a>
+                </li>
+                <li>
+                    <a href="/group/customer-care/overview">Customer Care</a>
+                </li>
+                <li>
+                    <a href="/group/stores-for-sale-brand-damaging/home">Purchase/Build Stores</a>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Order Supplies</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/scc/home2">Supply Chain</a>
+                </li>
+                <li>
+                    <a href="/group/ordersupplies/direct-4-stores">Direct-4-Stores</a>
+                </li>
+                <li>
+                    <a href="/group/ordersupplies/inventory-finder">Inventory Finder</a>
+                </li>
+                <li>
+                    <a href="/group/sustainability/home">Sustainability</a>
+                </li>
+                <li>
+                    <a href="https://es.dominos.com" target="_blank">E&S</a>
+                </li>
+                <li>
+                    <a href="/group/marketing/print">Print Resources</a>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Store Tech</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/store-technology/home">Store Tech Home</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="storetech_pulse" id="storetech_pulse"/>
+                    <label for="storetech_pulse">Pulse Training</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/pulseguide/home">Pulse Training Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/pulseguide/pulsepedia">Pulsepedia</a>
+                        </li>
+                        <li>
+                            <a href="/group/pulseguide/downloadable-training-documents">New Store Pulse Training</a>
+                        </li>
+                        <li>
+                            <a href="/group/pulseguide/hive-videos">Hive Training Videos</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <a href="/group/information-security/overview">Information Security</a>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Our Brand</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/mission/welcome">Mission</a>
+                </li>
+                <li>
+                    <a href="/group/people/wrcdirectory">WRC Directory</a>
+                </li>
+                <li>
+                    <a href="/group/dominos-pictures/home">Domino's Pictures</a>
+                </li>
+                <li>
+                    <a href="/group/dictionary">Domino's Dictionary</a>
+                </li>
+                <li>
+                    <a href="/group/people/awards">Awards</a>
+                </li>
+                <li>
+                    <a href="/group/pizzatheater/home">Pizza Theater</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="brand_ca" id="brand_ca"/>
+                    <label for="brand_ca">Creative Assets</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/creative-assets/logos">Logos</a>
+                        </li>
+                        <li>
+                            <a href="/group/creative-assets/fonts">Fonts</a>
+                        </li>
+                        <li>
+                            <a href="/group/creative-assets/presentations">Presentations</a>
+                        </li>
+                        <li>
+                            <a href="/group/creative-assets/graphics">Graphics</a>
+                        </li>
+                        <li>
+                            <a href="/group/dominos-pictures/home">Video</a>
+                        </li>
+                        <li>
+                            <a href="/group/creative-assets/historical-references">Historical References</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+                <li>
+                    <input type="checkbox" name="brand_events" id="brand_events"/>
+                    <label for="brand_events">Events</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/2018-worldwide-rally/">2018 WWR</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+            </ul>
+        </li>
+        <li class="okayNavCollapse">
+            <span>Partnerships</span>
+            <ul class="topLevel__menu">
+                <li>
+                    <a href="/group/partners/partnersfoundation">Partners</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="partner_stJude" id="partner_stJude"/>
+                    <label for="partner_stJude">St. Jude</label>
+                    <ul class="expandable">
+                        <li>
+                            <a href="/group/stjude/home">St. Jude Home</a>
+                        </li>
+                        <li>
+                            <a href="/group/stjude/progress">Campaign Progress</a>
+                        </li>
+                        <li>
+                            <a href="/group/stjude/leaderboard">Team Member Leaderboard</a>
+                        </li>
+                        <li>
+                            <a href="/group/stjude/store-leaderboard">Store Leaderboard</a>
+                        </li>
+                        <li>
+                            <a href="/group/stjude/5k-walk/runs">5K Walk/Runs</a>
+                        </li>
+                    </ul>
+                    <span class="icon-chevron-down"></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

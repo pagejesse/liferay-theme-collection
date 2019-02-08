@@ -1,0 +1,56 @@
+.aui,
+.aui body,
+#wrapper,
+#main-content,
+#main-content .row-fluid,
+#main-content #column-1,
+#main-content #layout-column_column-1
+{
+  height: 100%;
+}
+
+.aui {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+#wrapper {
+	padding: 0;
+}
+
+#banner {
+	position: absolute;
+  width: 100%;
+  height: 60px;
+}
+
+#content,
+#content #left-panel-80,
+#content #right-panel-20 {
+  position: absolute;
+  bottom: 0;
+}
+
+#content {
+  top: 60px;
+  width: 100%;
+  
+  #left-panel-80, #right-panel-20 {
+    top: 0;
+  }
+  
+  #left-panel-80 {
+    left: 0;
+    width: 80%;
+  }
+  
+  #right-panel-20 {
+    right: 0;
+    width: 20%;
+  }
+}
+
+.chat-portlet {
+	display: none;
+}

@@ -1,0 +1,9 @@
+<title>Domino's Rewards Programs</title>
+
+<meta content="initial-scale=1.0, width=device-width" name="viewport"/>
+<meta name="google-site-verification" content="ipaKM6dYgmxelGTvv5cFoZQ8W7rqKX7PdW2yjOyTzpM"/>
+<link rel="canonical" href="https://dominosrewards.com"/>
+
+$theme.include($top_head_include)
+
+#parse ("$full_templates_path/partials/ga.vm")

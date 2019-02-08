@@ -1,0 +1,18 @@
+html,
+html body {
+  height: 100%;
+}
+
+.aui {
+  background: transparent;
+
+  body {
+    background-color: #ddd;
+  }
+
+  .container-fluid {
+    max-width: 1024px;
+    margin: auto;
+    height: 100%;
+  }
+}
